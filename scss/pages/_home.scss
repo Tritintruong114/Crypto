@@ -1,0 +1,169 @@
+  .main {
+    background: var(--ocean-cl);
+    // position: relative;
+
+
+    .schero {
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+
+      @include xs {
+        height: 100%;
+        padding-top: 116px;
+      }
+
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        z-index: 3;
+
+        @include xs {
+          display: grid;
+          height: 100%;
+        }
+      }
+
+      &__content {
+        margin-bottom: 32px;
+        max-width: 813px;
+
+        .textbox {
+          .heading {
+            margin-bottom: 18px;
+
+            @include xxxs {
+              font-size: 36px;
+            }
+          }
+
+          .desc {
+            max-width: 568px;
+          }
+
+          margin-bottom: 34px;
+        }
+
+        .btngroup {
+          display: flex;
+          gap: 28px;
+          width: 100%;
+
+          @include xs {
+            gap: 16px;
+            display: grid;
+          }
+
+
+          .--mainbtn {
+            &:nth-child(2) {
+              background-color: rgb(255, 255, 255, 0.1);
+
+              &:hover {
+                background-color: var(--hover-btn);
+              }
+            }
+          }
+        }
+      }
+
+      &__planet {
+        margin-top: 40px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+
+        img {
+          transform: translateX(18%);
+
+          @include xs {
+            transform: initial;
+          }
+        }
+
+        @include xs {
+          position: initial;
+          padding: 0 29px;
+          margin-bottom: 32px;
+        }
+      }
+
+
+      .blur__png {
+        position: absolute;
+        transform: translateY(-130%);
+        z-index: 1;
+        display: none;
+        filter: blur(100px);
+
+        @include xs {
+          display: initial;
+        }
+      }
+    }
+
+    .scbuild {
+      .container {
+        z-index: 3;
+
+        .scbuild__company {
+          @include disflex;
+          flex-direction: column;
+          gap: 43px;
+
+          @include xs {
+            display: grid;
+            padding: 0 29px;
+            gap: 0;
+            margin-bottom: 57px;
+          }
+
+          // position: absolute;
+          bottom: 0;
+          width: 100%;
+
+          .--body1 {
+            @include xs {
+              font-size: 12px;
+              margin-bottom: 24px;
+              width: 100%;
+              text-align: center;
+            }
+          }
+        }
+      }
+
+    }
+
+
+    @include xs {
+      overflow: hidden;
+    }
+  }
+
+  .blur__hero-light {
+    position: absolute;
+    transform: translate(10%, -10%);
+
+
+    @include xs {
+      display: none;
+    }
+  }
+
+  .blur__hero-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+
+    @include xs {
+      display: none;
+    }
+  }

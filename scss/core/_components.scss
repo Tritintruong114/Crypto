@@ -1,6 +1,5 @@
 img {
-  max-width: 100%;
-  height: auto;
+
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -40,6 +39,8 @@ sup {
 }
 
 .heading {
+  color: var(--white-cl);
+
   &.--h1 {
     font-family: sb;
     font-size: var(--fs-h1);
@@ -55,6 +56,7 @@ sup {
   }
 
   @include sm {
+
     &.--yellow-left::before,
     &.--yellow-right::before {
       display: none;
@@ -90,6 +92,7 @@ sup {
   transform: translateX(0);
   flex-direction: column;
   gap: 16px;
+
   &__bar {
     position: relative;
     background: var(--white-cl);
@@ -97,6 +100,7 @@ sup {
     height: 4px;
     // animation: showLoadingBar 0.6s;
     @include transistion;
+
     &-inside {
       background: var(--darkYellow-cl);
       height: 4px;
@@ -105,6 +109,7 @@ sup {
       @include transistion;
     }
   }
+
   &__percent {
     color: white;
     @include centerAbs;
@@ -114,6 +119,7 @@ sup {
     // left: 30px;
     // animation: logoSlide 4s;
   }
+
   &.--hiden {
     opacity: 0;
     visibility: hidden;
@@ -127,10 +133,12 @@ sup {
   letter-spacing: var(--ls-textmenu);
   color: var(--white-cl);
   text-transform: uppercase;
+
   a {
     color: var(--white-cl);
   }
 }
+
 .--lb {
   font-family: sb;
   font-size: var(--fs-lb);
@@ -139,6 +147,7 @@ sup {
   color: var(--white-cl);
   text-transform: uppercase;
 }
+
 .--tb {
   font-family: sb;
   font-size: var(--fs-tb);
@@ -147,6 +156,7 @@ sup {
   text-transform: uppercase;
   letter-spacing: var(--ls-tb);
 }
+
 .--body1 {
   font-family: sr;
   font-size: var(--fs-b1);
@@ -156,7 +166,7 @@ sup {
 }
 
 .--body2 {
-  font-family: sm;
+  font-family: sr;
   font-size: var(--fs-b2);
   line-height: var(--lh-b2);
   color: var(--white-cl);
@@ -178,6 +188,7 @@ sup {
   @include disflex;
   @include transistion;
   cursor: pointer;
+
   a {
     color: var(--white-cl);
   }
@@ -199,6 +210,7 @@ sup {
   &:hover {
     background-color: var(--hover-btn);
   }
+
   @include md {
     width: 100%;
   }
@@ -211,13 +223,16 @@ sup {
   width: 36px;
   @include disflex;
   @include transistion;
+
   svg {
     path {
       @include transistion;
     }
   }
+
   &:hover {
     outline: 1px solid var(--sky-cl);
+
     svg {
       path {
         fill: var(--sky-cl);
@@ -225,6 +240,7 @@ sup {
     }
   }
 }
+
 .infobox {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: var(--infobox-border);
@@ -232,10 +248,46 @@ sup {
 
   .desc {
     max-width: 274px;
+
     @include sm {
       font-size: var(--fs-b1);
       line-height: var(--lh-b1);
       letter-spacing: var(--lb-b1);
     }
   }
+}
+
+.company__group {
+  width: 100%;
+  @include disbet;
+
+  @include md {
+    .company {
+
+      height: 23px;
+    }
+  }
+
+  @include xs {
+    display: inline-grid;
+
+    grid-template-columns: 1fr 1fr;
+    row-gap: 12px;
+    column-gap: 40px;
+
+    .company {
+      height: 19px;
+      @include disflex;
+
+      @include sm {
+        &:last-child {
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          grid-column: 1/span 2;
+        }
+      }
+    }
+  }
+
 }
