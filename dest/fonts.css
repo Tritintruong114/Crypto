@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "sb";
+  src: url("../fonts/DMSans18pt-Bold.woff2") format("woff2"),
+    url("../fonts/DMSans18pt-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "sm";
+  src: url("DMSans24pt-Medium.woff2") format("woff2"),
+    url("DMSans24pt-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "sr";
+  src: url("../fonts/DMSans24pt-Regular.woff2") format("woff2"),
+    url("../fonts/DMSans24pt-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

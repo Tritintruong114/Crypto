@@ -1,0 +1,241 @@
+img {
+  max-width: 100%;
+  height: auto;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  display: block;
+  outline: 0;
+  object-fit: contain;
+
+  &.--center {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+strong {
+  font-family: pb;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+//Textbox component
+.textbox {
+  position: relative;
+}
+
+.heading {
+  &.--h1 {
+    font-family: sb;
+    font-size: var(--fs-h1);
+    line-height: var(--lh-h1);
+    letter-spacing: var(--ls-h1);
+  }
+
+  &.--h2 {
+    font-family: sb;
+    font-size: var(--fs-h2);
+    line-height: var(--lh-h2);
+    letter-spacing: var(--ls-h2);
+  }
+
+  @include sm {
+    &.--yellow-left::before,
+    &.--yellow-right::before {
+      display: none;
+    }
+  }
+}
+
+// Button Learn More
+
+.--hiden {
+  display: none;
+
+  @include sm {
+    display: block;
+    float: right;
+  }
+}
+
+.--active {
+  color: var(--white-cl);
+  background: var(--darkYellow-cl);
+}
+
+.loading {
+  position: fixed;
+  z-index: 9;
+  opacity: 1;
+  height: 100vh;
+  width: 100vw;
+  background: var(--black-cl);
+  @include disflex;
+  @include transistion;
+  transform: translateX(0);
+  flex-direction: column;
+  gap: 16px;
+  &__bar {
+    position: relative;
+    background: var(--white-cl);
+    width: 160px;
+    height: 4px;
+    // animation: showLoadingBar 0.6s;
+    @include transistion;
+    &-inside {
+      background: var(--darkYellow-cl);
+      height: 4px;
+      animation: loadingScreen 4s;
+      border-radius: 100%;
+      @include transistion;
+    }
+  }
+  &__percent {
+    color: white;
+    @include centerAbs;
+    z-index: 3;
+    top: 20px;
+    @include transistion;
+    // left: 30px;
+    // animation: logoSlide 4s;
+  }
+  &.--hiden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.--tm {
+  font-family: sr;
+  font-size: var(--fs-textmenu);
+  line-height: var(--lh-textmenu);
+  letter-spacing: var(--ls-textmenu);
+  color: var(--white-cl);
+  text-transform: uppercase;
+  a {
+    color: var(--white-cl);
+  }
+}
+.--lb {
+  font-family: sb;
+  font-size: var(--fs-lb);
+  line-height: var(--lh-lb);
+  letter-spacing: var(--ls-lb);
+  color: var(--white-cl);
+  text-transform: uppercase;
+}
+.--tb {
+  font-family: sb;
+  font-size: var(--fs-tb);
+  line-height: var(--lh-tb);
+  color: var(--white-cl);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-tb);
+}
+.--body1 {
+  font-family: sr;
+  font-size: var(--fs-b1);
+  line-height: var(--lh-b1);
+  letter-spacing: var(--ls-b1);
+  color: var(--white-cl);
+}
+
+.--body2 {
+  font-family: sm;
+  font-size: var(--fs-b2);
+  line-height: var(--lh-b2);
+  color: var(--white-cl);
+  letter-spacing: var(--ls-b2);
+}
+
+.--tag {
+  font-family: sr;
+  font-size: var(--fs-texttag);
+  color: var(--white-cl);
+  line-height: var(--lh-texttag);
+  letter-spacing: var(--ls-texttag);
+}
+
+.--downloadbtn {
+  height: var(--downloadbtn-height);
+  background: var(--sky-cl);
+  border-radius: 80px;
+  @include disflex;
+  @include transistion;
+  cursor: pointer;
+  a {
+    color: var(--white-cl);
+  }
+
+  &:hover {
+    background-color: var(--hover-btn);
+  }
+}
+
+.--mainbtn {
+  background-color: var(--sky-cl);
+  @include disflex;
+  height: var(--button-height);
+  width: 195px;
+  border-radius: var(--button-border);
+  gap: 8px;
+  @include transistion;
+
+  &:hover {
+    background-color: var(--hover-btn);
+  }
+  @include md {
+    width: 100%;
+  }
+}
+
+.--social-icon {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 36px;
+  border-radius: 100%;
+  width: 36px;
+  @include disflex;
+  @include transistion;
+  svg {
+    path {
+      @include transistion;
+    }
+  }
+  &:hover {
+    outline: 1px solid var(--sky-cl);
+    svg {
+      path {
+        fill: var(--sky-cl);
+      }
+    }
+  }
+}
+.infobox {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--infobox-border);
+  padding: 44px 32px;
+
+  .desc {
+    max-width: 274px;
+    @include sm {
+      font-size: var(--fs-b1);
+      line-height: var(--lh-b1);
+      letter-spacing: var(--lb-b1);
+    }
+  }
+}

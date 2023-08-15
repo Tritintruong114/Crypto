@@ -1,0 +1,105 @@
+.header {
+  background-color: var(--ocean-cl);
+  height: var(--header-height);
+  width: 100vw;
+  @include disflex;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header__burger {
+      background-color: var(--sky-cl);
+      height: 45px;
+      width: 45px;
+      border-radius: 100%;
+      display: none;
+      @include transistion;
+      .header__burger-line {
+        height: 2px;
+        background-color: var(--white-cl);
+        width: 25px;
+        position: relative;
+
+        @include transistion;
+        &::after {
+          content: "";
+          height: 2px;
+          background-color: var(--white-cl);
+          width: 25px;
+          display: block;
+          position: absolute;
+          @include transistion;
+          top: -7px;
+        }
+        &::before {
+          content: "";
+          height: 2px;
+          background-color: var(--white-cl);
+          width: 25px;
+          position: absolute;
+          @include transistion;
+          display: block;
+          top: 7px;
+        }
+
+        &.--active {
+          background-color: transparent;
+          &::after {
+            top: 0px;
+            transform: rotate(45deg);
+          }
+          &::before {
+            top: 0px;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+
+      @include sm {
+        @include disflex;
+      }
+
+      &:hover {
+        background: var(--hover-btn);
+      }
+    }
+  }
+  &__container {
+    @include disflex;
+    .header__logo {
+      padding-right: 32px;
+    }
+    .header__menu {
+      ul {
+        height: 66px;
+        border-left: 1px solid #010d50;
+        padding-left: 32px;
+        gap: 27px;
+        display: flex;
+        align-items: center;
+        li {
+          a {
+            text-transform: uppercase;
+            color: var(--white-cl);
+          }
+        }
+      }
+
+      @include sm {
+        display: none;
+      }
+    }
+  }
+  .header__button {
+    width: 210px;
+    @include sm {
+      display: none;
+    }
+  }
+
+  @include sm {
+    align-items: end;
+    padding-bottom: 1px;
+  }
+}

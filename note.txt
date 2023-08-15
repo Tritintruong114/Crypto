@@ -1,0 +1,45 @@
+- Xuất svg cho icon
+- Xuất png cho blur
+- text box component
+- isSelected thì set opacity = 1 
+- slide 2 post 1 lan , tính chiều rộng của card = container / 2 - gap của container ** fill nội dung bị tràn.
+ set chiều cao = javascript. Slide on ready -> for each, lấy chiều cao của từng item (text) để lấy chiều cao cao nhất để làm 
+ chiều cao chung. (test =  css để fix) text flex strech.
+ -Hình laptop set witdth cứng.
+ -Các bài post có thẻ a trong hình và tilte -> desc trong bài viết sử lí 3 chấm. , tag trong bài viết kéo top âm = 1/2 chiều cao
+ nút.
+ -a nhớ có targer _blank.
+ -responsive flickity slider, multiple flickity slider. cho nhiều slider giống nhau.
+
+ -Timeline có position sticky.
+
+ -Validate form. 
+ -thẻ mail gắn mail to atrribute.
+
+ 
+ * Trang blog -> chuyển trang.
+
+ 14/8
+ -Font ✔
+ -Varibles ✔
+ -Success implement grunt and fixing scss core file.
+ - set button height for the project in desktop and mobile.
+
+ ->Img export 3 pages. 
+ -> Success export all pages images
+
+ 15/8
+
+ UI
+ Header -desktop ✔ -> mobile ✔
+ Footer -desktop ✔ -> mobile ✔
+ 
+ Schero
+
+
+JS
+ Toggle Hambergur menu ✔
+ Navigation with header.
+ Set up HTML -> homepage
+
+ 
