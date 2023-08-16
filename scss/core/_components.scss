@@ -1,5 +1,4 @@
 img {
-
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -56,7 +55,6 @@ sup {
   }
 
   @include sm {
-
     &.--yellow-left::before,
     &.--yellow-right::before {
       display: none;
@@ -173,6 +171,15 @@ sup {
   letter-spacing: var(--ls-b2);
 }
 
+.--ip {
+  font-family: sb;
+  font-size: var(--fs-ip);
+  line-height: var(--lh-ip);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-ip);
+  color: var(--white-cl);
+}
+
 .--tag {
   font-family: sr;
   font-size: var(--fs-texttag);
@@ -244,15 +251,45 @@ sup {
 .infobox {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: var(--infobox-border);
-  padding: 44px 32px;
-
+  .infobox__icon {
+    margin-bottom: 20px;
+  }
+  .--lb {
+    margin-bottom: 7px;
+  }
   .desc {
-    max-width: 274px;
+    max-width: 279px;
+    @include xs {
+      max-width: 274px;
+    }
 
-    @include sm {
-      font-size: var(--fs-b1);
-      line-height: var(--lh-b1);
-      letter-spacing: var(--lb-b1);
+    &.--max-w {
+      max-width: 100%;
+    }
+  }
+  &.--navi-cl {
+    background-color: var(--navi-cl);
+  }
+  &.--sky-cl {
+    background: var(--sky-cl);
+  }
+
+  &.--iphone {
+    @include disbet;
+    flex-direction: column;
+    padding: 44px 41px 0 41px;
+    @include xs {
+      padding: 44px 22px 0 33px;
+    }
+  }
+
+  &.--info {
+    width: 325px;
+    padding: 48px 23px;
+    height: 295px;
+    @include xs {
+      width: initial;
+      padding: 42px 33px;
     }
   }
 }
@@ -263,7 +300,6 @@ sup {
 
   @include md {
     .company {
-
       height: 23px;
     }
   }
@@ -284,10 +320,15 @@ sup {
           display: flex;
           width: 100%;
           justify-content: center;
-          grid-column: 1/span 2;
+          grid-column: 1 / span 2;
         }
       }
     }
   }
+}
 
+.infobox__content-iphone {
+  .--lb {
+    margin-bottom: 22px;
+  }
 }
