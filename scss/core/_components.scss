@@ -35,6 +35,36 @@ sup {
 //Textbox component
 .textbox {
   position: relative;
+
+  .heading {
+    margin-bottom: 16px;
+  }
+  &.--icon {
+    margin-bottom: 29px;
+    .heading {
+      margin-bottom: 28px;
+    }
+    .desc {
+      margin-bottom: 18px;
+    }
+    @include xs {
+      .heading {
+        margin-bottom: 16px;
+      }
+      .desc {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  &__icons {
+    display: grid;
+    gap: 17px;
+    &-detail {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+    }
+  }
 }
 
 .heading {
@@ -221,6 +251,16 @@ sup {
   @include md {
     width: 100%;
   }
+
+  &.--white-cl {
+    background-color: var(--white-cl);
+    color: var(--sky-cl);
+    @include transistion;
+    &:hover {
+      background-color: var(--hover-btn);
+      color: var(--white-cl);
+    }
+  }
 }
 
 .--social-icon {
@@ -278,7 +318,15 @@ sup {
     @include disbet;
     flex-direction: column;
     padding: 44px 41px 0 41px;
+
+    //Done for mobile
     @include xs {
+      .--ip {
+        margin-bottom: 22px;
+      }
+      .desc {
+        margin-bottom: 25px;
+      }
       padding: 44px 22px 0 33px;
     }
   }
@@ -287,9 +335,14 @@ sup {
     width: 325px;
     padding: 48px 23px;
     height: 295px;
+
+    //Done for mobile
     @include xs {
       width: initial;
-      padding: 42px 33px;
+      padding: 48px 0 48px 23px;
+      .desc {
+        max-width: 259px;
+      }
     }
   }
 }
