@@ -16,6 +16,7 @@
   --black-cl: #000000;
   --error-cl: #ee0303;
   --hover-btn: #031fb4;
+  --button-cl-opacity: rgba(255, 255, 255, 0.1);
 
   //Height
   --header-height: 132px;
@@ -26,6 +27,7 @@
   --tabbtn-height: 40px;
   --button-border: 80px;
   --infobox-border: 40px;
+  --tag-height: 36px;
   //Heading 1
   --fs-h1: 66px;
   --lh-h1: 80px;
@@ -80,6 +82,14 @@
   --section-padding: 120px;
   --footer-padding: 56px 0 32px 0;
 
+  //Author title
+  --fs-author: 16px;
+  --lh-author: 18px;
+  --ls-author: 0.8px;
+  //Post title
+  --fs-posttitle: 22px;
+  --lh-posttitle: 31px;
+  --ls-posttitle: 0px;
   //Responsive
   @include md {
     --container-max-width: 1140px;
@@ -139,7 +149,10 @@
     --fs-textmenu: 14px;
     --lh-textmenu: 18px;
     --ls-textmenu: 0.7px;
-
+    //Post title
+    --fs-posttitle: 22px;
+    --lh-posttitle: 31px;
+    --ls-posttitle: 0px;
     --container-max-width: 100%;
   }
 

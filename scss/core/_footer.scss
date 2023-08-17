@@ -86,7 +86,9 @@
 
     .copyright {
       margin-top: 26px;
-
+      color: var(--white-cl);
+      font-size: var(--fs-tag);
+      font-family: sr;
       @include xs {
         @include disflex;
       }

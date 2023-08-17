@@ -1,7 +1,9 @@
 .main {
   background: var(--ocean-cl);
   // position: relative;
-
+  @include xs {
+    overflow: hidden;
+  }
   .schero {
     height: 100vh;
     position: relative;
@@ -157,14 +159,12 @@
         @include disflex;
         flex-direction: column;
         grid-column: 1 / span 4;
-        gap: 16px;
         .decs {
           text-align: center;
           max-width: 496px;
         }
 
         @include xs {
-          gap: 14px;
           align-items: start;
           .heading {
             max-width: 273px;
@@ -209,19 +209,27 @@
     //Done mobile dev
     @include xs {
       padding: 76px 0 80px 0;
+      .container {
+        display: grid;
+        gap: 40px;
+      }
+      &__first {
+        display: grid;
+        gap: 42px;
+      }
+      &__second {
+        display: grid;
+        gap: 32px;
+      }
     }
   }
 
   //Done mobile dev
-  @include xs {
-    overflow: hidden;
-  }
 
   .scexplore {
     background-color: var(--sky-cl);
 
     //Done mobile
-
     @include xs {
       padding-top: 40px;
 
@@ -236,6 +244,99 @@
         flex-direction: column;
         display: flex;
         align-items: center;
+      }
+    }
+  }
+
+  .scuserfeedback {
+    //Done mobile
+    @include xs {
+      padding: 120px 0 70px 0;
+      &__container {
+        padding: 26px 0;
+        display: flex;
+        gap: 8px;
+        width: 100%;
+        // overflow: hidden;
+        &-element {
+          background-color: var(--navi-cl);
+          padding: 55px 50px;
+          border-radius: var(--infobox-border);
+          width: 100%;
+          flex-shrink: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 22px;
+        }
+      }
+    }
+  }
+
+  .scvideo {
+    .container {
+      display: grid;
+    }
+
+    //Done mobile
+    @include xs {
+      padding-bottom: 40px;
+      .container {
+        gap: 10px;
+
+        .scvideo__video {
+          background-color: var(--navi-cl);
+          position: relative;
+          border-radius: var(--infobox-border);
+          overflow: hidden;
+          aspect-ratio: 358/400;
+          &-thumbnail {
+            @include centerAbs;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+          &-play {
+            z-index: 3;
+            height: 100px;
+            width: 100px;
+            background-color: rgba(255, 255, 255, 0.2);
+            @include centerAbs;
+            @include disflex;
+            border-radius: 100%;
+          }
+        }
+      }
+    }
+  }
+  .scposts {
+    //Done mobile
+    @include xs {
+      padding: 40px 0;
+      display: flex;
+      flex-direction: column;
+      .--mainbtn {
+        margin-top: 16px;
+      }
+      .posts__container {
+        margin-top: 24px;
+      }
+    }
+  }
+
+  .scdownload {
+    @include xs {
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .infobox__content-iphone {
+          margin-bottom: 40px;
+        }
+      }
+      padding: 40px 0 80px 0;
+      .--mainbtn {
+        max-width: 193px;
       }
     }
   }
