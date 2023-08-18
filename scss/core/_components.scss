@@ -45,8 +45,13 @@ sup {
       margin-bottom: 28px;
     }
     .desc {
-      margin-bottom: 18px;
-      max-width: 330px;
+      max-width: 440px;
+    }
+    @include xs {
+      .desc {
+        margin-bottom: 18px;
+        max-width: 330px;
+      }
     }
     @include xs {
       .heading {
@@ -268,7 +273,7 @@ sup {
   background-color: var(--sky-cl);
   @include disflex;
   height: var(--button-height);
-  width: 195px;
+  width: 210px;
   border-radius: var(--button-border);
   gap: 8px;
   @include transistion;
@@ -416,13 +421,11 @@ sup {
 }
 
 .user__info {
-  @include xs {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    img {
-      border-radius: 100%;
-    }
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  img {
+    border-radius: 100%;
   }
 }
 
@@ -486,4 +489,15 @@ sup {
 
 .--button-opacity {
   background-color: var(--button-cl-opacity);
+}
+.blur__png {
+  position: absolute;
+  // transform: translateY(-130%);
+  z-index: 1;
+  display: none;
+  filter: blur(50px);
+
+  @include xs {
+    display: initial;
+  }
 }
