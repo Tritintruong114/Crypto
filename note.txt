@@ -43,3 +43,32 @@ JS
  Set up HTML -> homepage
 
  
+
+
+ Header 
+
+ -> btn -> padding left - right
+ title schero-> lo 10px
+ desc schero -> thieu 10px
+
+ trai dat bi loi 
+ blur khong xuat svg
+
+ textbutton set lai letterspacing
+
+ company group flex wrap
+
+ button scservices
+
+ section earndaily computer
+
+ user de ngoai container
+ infobox ko set maww
+
+xu li hinh avatar
+xu li hinh posts 
+xu li gap tags
+
+
+https://www.w3schools.com/cssref/css3_pr_column-count.php
+column count

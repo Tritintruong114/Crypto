@@ -2,77 +2,94 @@
   --time-duration: 0.4s;
   --cubic: cubic-bezier(0.59, 0.29, 0.15, 0.93);
   //Gap
-   --gap: 26px;   
+  --gap: 26px;
 
   //Columms
   --grid-columns: repeat(12, 1fr);
   --grid-columns-span: 1 / span 12;
 
   //Colors
-  --sky-cl: #0328EE;
+  --sky-cl: #0328ee;
+  --navi-cl: #010d50;
+  --ocean-cl: #010725;
   --white-cl: #ffffff;
-  --darkblue-cl: #000000;
-  --ocean-cl: #010D50;
-  --error-cl:#EE0303;  
-  --hover-btn:#031FB4;
- 
+  --black-cl: #000000;
+  --error-cl: #ee0303;
+  --hover-btn: #031fb4;
+  --button-cl-opacity: rgba(255, 255, 255, 0.1);
+
   //Height
-  --header-height: 132px; 
+  --header-height: 132px;
   --button-height: 70px;
-  --subscribe-height:64px; 
-  --downloadbtn-height:56px;
-  --tagbtn-height:36px;
-  --tabbtn-height:40px;
-  --button-border:80px;
-  --infobox-border:40px;
+  --subscribe-height: 64px;
+  --downloadbtn-height: 56px;
+  --tagbtn-height: 36px;
+  --tabbtn-height: 40px;
+  --button-border: 80px;
+  --infobox-border: 40px;
+  --tag-height: 36px;
   //Heading 1
   --fs-h1: 66px;
-  --lh-h1: 80px;  
-  --ls-h1:-10px 
+  --lh-h1: 80px;
+  --ls-h1: -1px;
 
   //Heading 2
-  --fs-h2 : 42px;
+  --fs-h2: 42px;
   --lh-h2: 55px;
   --ls-h2: 0px;
 
-  //Label 
-  --fs-lb : 18px;
+  //Label
+  --fs-lb: 18px;
   --lh-lb: 26px;
   --ls-lb: 0.9px;
 
-  //TextButton 
-  --fs-tb : 16px;
+  //TextButton
+  --fs-tb: 16px;
   --lh-tb: 16px;
-  --ls-tb: 0.9px;
+  --ls-tb: 1.6px;
 
-  //Body1 
-  --fs-b1 : 18px;
+  //Body1
+  --fs-b1: 18px;
   --lh-b1: 32px;
   --ls-b1: 0px;
 
-  //Body2 
-  --fs-b2 : 16px;
+  //Body2
+  --fs-b2: 16px;
   --lh-b2: 26px;
   --ls-b2: 0px;
 
-  //TextMenu 
-  --fs-textmenu : 14px;
+  //TextMenu
+  --fs-textmenu: 14px;
   --lh-textmenu: 16px;
   --ls-textmenu: 1.4px;
+  //TextIphone
 
-   //TextTag 
-  --fs-texttag : 14px;
+  --fs-ip: 20px;
+  --lh-ip: 26px;
+  --ls-ip: 1px;
+
+  //TextTag
+  --fs-texttag: 14px;
   --lh-texttag: 18px;
   --ls-texttag: 0.7px;
 
   //Max-width
   --body-maxwidth: 2560px;
   --container-maxwidth: calc(1196px + calc(var(--gap) * 2));
- 
+
   //Padding
   --container-padding: 28px;
   --section-padding: 120px;
-  --footer-padding:56px 0 32px 0;
+  --footer-padding: 56px 0 32px 0;
+
+  //Author title
+  --fs-author: 16px;
+  --lh-author: 18px;
+  --ls-author: 0.8px;
+  //Post title
+  --fs-posttitle: 22px;
+  --lh-posttitle: 31px;
+  --ls-posttitle: 0px;
   //Responsive
   @include md {
     --container-max-width: 1140px;
@@ -80,63 +97,64 @@
 
   //Tablet
   @include sm {
-    --container-max-width: 960px; 
+    --container-max-width: 960px;
     --section-padding: 90px;
-  }  
+  }
 
   //Mobile
   @include sm {
-  --container-padding:24px;
-    //Mobile height 
-  --tabbtn-height:48px;
-  --subscribe-height:70px; 
-  --header-height: 73px; 
-  --downloadbtn-height:70px;
-  --tagbtn-height:18px;
+    --container-padding: 15px;
+    //Mobile height
+    --tabbtn-height: 48px;
+    --subscribe-height: 70px;
+    --header-height: 73px;
+    --downloadbtn-height: 70px;
+    --tagbtn-height: 18px;
     //Heading 1
-  --fs-h1: 38px;
-  --lh-h1: 46px;
-  --ls-h1:-1px; 
+    --fs-h1: 38px;
+    --lh-h1: 46px;
+    --ls-h1: -1px;
 
-  //Heading 2
-  --fs-h2 : 28px;
-  --lh-h2: 36px;
-  --ls-h2: 0px;
+    //Heading 2
+    --fs-h2: 28px;
+    --lh-h2: 36px;
+    --ls-h2: 0px;
 
-  //Label 
-  --fs-lb : 18px;
-  --lh-lb: 26px;
-  --ls-lb: 0.9px;
+    //Label
+    --fs-lb: 18px;
+    --lh-lb: 26px;
+    --ls-lb: 0.9px;
 
-  //TextButton 
-  --fs-tb : 16px;
-  --lh-tb: 16px;
-  --ls-tb: 1.6px;
+    //TextButton
+    --fs-tb: 16px;
+    --lh-tb: 16px;
+    --ls-tb: 1.6px;
 
-  //Body1 
-  --fs-b1 : 16px;
-  --lh-b1: 26px;
-  --ls-b1: 0px;
+    //Body1
+    --fs-b1: 16px;
+    --lh-b1: 26px;
+    --ls-b1: 0px;
 
-  //Body2 
-  --fs-b2 : 16px;
-  --lh-b2: 26px;
-  --ls-b2: 0px; 
+    //Body2
+    --fs-b2: 16px;
+    --lh-b2: 26px;
+    --ls-b2: 0px;
 
-  //TextMenu 
-  --fs-textmenu : 32px;
-  --lh-textmenu: 100%;
-  --ls-textmenu: 1.4px;
+    //TextMenu
+    --fs-textmenu: 32px;
+    --lh-textmenu: 100%;
+    --ls-textmenu: 1.4px;
 
-   //TextTag 
-  --fs-textmenu : 14px;
-  --lh-textmenu: 18px;
-  --ls-textmenu: 0.7px;
-
-  --container-max-width: 100%;
+    //TextTag
+    --fs-textmenu: 14px;
+    --lh-textmenu: 18px;
+    --ls-textmenu: 0.7px;
+    //Post title
+    --fs-posttitle: 22px;
+    --lh-posttitle: 31px;
+    --ls-posttitle: 0px;
+    --container-max-width: 100%;
   }
-
- 
 
   @keyframes jumpInfinite {
     0% {
@@ -161,36 +179,44 @@
       transform: translateX(100%);
     }
   }
+
   @keyframes showLoadingBar {
     0% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }
   }
+
   @keyframes hideLoadingScreen {
     0% {
       opacity: 1;
       transform: translateX(0);
     }
+
     100% {
       opacity: 0;
       transform: translateX(-100%);
     }
   }
+
   @keyframes loadingScreen {
     0% {
       width: 0%;
     }
+
     100% {
       width: 100%;
     }
   }
+
   @keyframes logoSlide {
     0% {
       left: 30px;
     }
+
     100% {
       left: 120px;
     }

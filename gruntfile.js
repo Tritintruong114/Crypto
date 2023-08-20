@@ -24,7 +24,7 @@ module.exports = (grunt) => {
         options: {
           style: "compressed",
           sourcemap: false,
-          lineNumbers: true,
+          // lineNumbers: true,
         },
         files: {
           "<%= dirs.dest %>/style.min.css": "<%= dirs.scss %>/style.scss",

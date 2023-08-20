@@ -1,15 +1,18 @@
 .footer {
-  background-color: var(--ocean-cl);
+  background-color: var(--navi-cl);
   padding: var(--footer-padding);
+
   .container {
     .footer__social {
       width: 100%;
       margin-bottom: 96px;
       @include disbet;
+
       &-icon {
         @include disflex;
         gap: 12px;
       }
+
       @include xs {
         flex-direction: column;
         gap: 24px;
@@ -23,16 +26,20 @@
       grid-gap: var(--gap);
       padding-bottom: 125px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
       &-menu {
         grid-column: 1 / span 3;
+
         .--lb {
           height: 56px;
           border-bottom: 1px solid var(--white-cl);
         }
+
         .menu__list {
           margin-top: 35px;
           @include disbet;
           width: 100%;
+
           ul {
             display: grid;
             gap: 18px;
@@ -43,6 +50,7 @@
             grid-template-columns: 1fr 1fr;
           }
         }
+
         @include xs {
           margin-bottom: 56px;
         }
@@ -51,12 +59,15 @@
       .infobox {
         display: grid;
         grid-column: 8 / span 5;
+        padding: 44px 32px;
         .--lb {
           margin-bottom: 10px;
         }
+
         .desc {
           margin-bottom: 24px;
         }
+
         .footer__btngroup {
           @include disflex;
           gap: 16px;
@@ -75,6 +86,9 @@
 
     .copyright {
       margin-top: 26px;
+      color: var(--white-cl);
+      font-size: var(--fs-tag);
+      font-family: sr;
       @include xs {
         @include disflex;
       }
