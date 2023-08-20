@@ -304,7 +304,7 @@
       picture {
         grid-column: 7 / span 6;
         position: absolute;
-        right: -72px;
+        right: 0;
         img {
           height: 100%;
           width: 100%;
@@ -418,9 +418,12 @@
       gap: 28px;
       padding-top: 33px;
       padding-bottom: 40px;
+      overflow: hidden;
+      justify-content: center;
+
       &-element {
         flex-shrink: 0;
-        width: 50%;
+        width: calc((var(--container-maxwidth) / 2) - var(--gap));
         padding: 66px 50px;
         background-color: var(--navi-cl);
         border-radius: var(--infobox-border);
@@ -483,8 +486,9 @@
         }
       }
       .scvideo__video {
+        grid-column: 6 / span 7;
         aspect-ratio: 662/400;
-        height: 400px;
+        width: 100%;
         position: relative;
         right: 0;
         border-radius: var(--infobox-border);
@@ -555,13 +559,24 @@
     }
   }
   .scposts {
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include xs {
+        display: initial;
+      }
+    }
     &__title {
       @include disbet;
       padding-bottom: 48px;
+      width: 100%;
       .desc {
         max-width: 461px;
       }
     }
+
     //Done mobile
     @include xs {
       &__title {
@@ -571,22 +586,65 @@
       padding: 40px 0;
       display: flex;
       flex-direction: column;
-      .--mainbtn {
-        margin-top: 16px;
-      }
+
       .posts__container {
         margin-top: 24px;
       }
     }
+
+    .--mainbtn {
+      margin-top: 40px;
+
+      @include xs {
+        margin-top: 16px;
+      }
+    }
+    padding-bottom: 80px;
   }
 
   .scdownload {
+    padding-top: 40px;
+    padding-bottom: 120px;
+    .textbox {
+      @include disbet;
+      width: 100%;
+      margin-bottom: 40px;
+      .desc {
+        max-width: 461px;
+      }
+      @include xs {
+        margin-bottom: 24px;
+        .desc {
+          max-width: 461px;
+        }
+      }
+    }
+    .scdownload__apps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+
+      .infobox__content-iphone {
+        margin-bottom: 40px;
+      }
+    }
+    //Mobile
     @include xs {
       .container {
+        .textbox {
+          display: initial;
+          .desc {
+            max-width: 330px;
+          }
+        }
         display: flex;
         flex-direction: column;
         gap: 16px;
-
+        .scdownload__apps {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
         .infobox__content-iphone {
           margin-bottom: 40px;
         }

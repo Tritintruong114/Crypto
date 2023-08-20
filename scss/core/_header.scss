@@ -106,7 +106,7 @@
   }
 
   .header__button {
-    width: 210px;
+    padding: 20px 32px;
 
     @include sm {
       display: none;

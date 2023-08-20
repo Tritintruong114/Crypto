@@ -226,11 +226,17 @@ sup {
 
 .--ip {
   font-family: sb;
-  font-size: var(--fs-ip);
-  line-height: var(--lh-ip);
-  text-transform: uppercase;
-  letter-spacing: var(--ls-ip);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
   color: var(--white-cl);
+  margin-bottom: 14px;
+  @include xs {
+    font-size: var(--fs-ip);
+    line-height: var(--lh-ip);
+    text-transform: uppercase;
+    letter-spacing: var(--ls-ip);
+    color: var(--white-cl);
+  }
 }
 .--author {
   color: var(--white-cl);
@@ -273,7 +279,7 @@ sup {
   background-color: var(--sky-cl);
   @include disflex;
   height: var(--button-height);
-  width: 210px;
+  padding: 27px 23px;
   border-radius: var(--button-border);
   gap: 8px;
   @include transistion;
@@ -338,7 +344,11 @@ sup {
     }
 
     &.--max-w {
-      max-width: 100%;
+      max-width: 443px;
+      margin-bottom: 32px;
+      @include xs {
+        max-width: 100%;
+      }
     }
   }
   &.--navi-cl {
@@ -352,6 +362,9 @@ sup {
     @include disbet;
     flex-direction: column;
     padding: 44px 41px 0 41px;
+    .heading {
+      margin-bottom: 16px;
+    }
 
     //Done for mobile
     @include xs {
@@ -366,9 +379,7 @@ sup {
   }
 
   &.--info {
-    width: 325px;
     padding: 48px 23px;
-    height: 295px;
 
     //Done for mobile
     @include xs {
@@ -455,26 +466,54 @@ sup {
     gap: 16px;
   }
 }
+.posts__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 26px;
+  @include xs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
 .post {
   border-radius: var(--infobox-border);
   overflow: hidden;
+
+  .postThumbnail {
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+  }
   .postthumbnail {
     position: relative;
-    aspect-ratio: 382/215;
-    width: 382px;
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      // @include centerAbs;
-    }
   }
+
   .tag__container {
-    padding-left: 24px;
-    position: absolute;
     display: flex;
-    gap: 6px;
+    position: absolute;
     bottom: calc((var(--tag-height) / 2) * -1);
+    padding-left: 24px;
+  }
+
+  @include xs {
+    .postthumbnail {
+      position: relative;
+      aspect-ratio: 382/215;
+      width: 382px;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .tag__container {
+      padding-left: 24px;
+      position: absolute;
+      display: flex;
+      gap: 6px;
+      bottom: calc((var(--tag-height) / 2) * -1);
+    }
   }
 }
 
