@@ -293,6 +293,7 @@
   .scearn {
     padding-top: 140px;
     padding-bottom: 218px;
+    position: relative;
 
     .container {
       display: grid;
@@ -327,29 +328,28 @@
       height: 585px;
       grid-template-columns: repeat(12, 1fr);
 
-
-      picture {
-        // position: absolute;
+      .scearn__second-computer {
         grid-column: 6 / span 7;
-        right: 0;
         position: absolute;
-        overflow: hidden;
+        right: 0;
+        width: 50%;
 
-        img {
-          width: 100%;
-          // transform: translateX(10%);
+        picture {
           height: 100%;
+          width: 100%;
+          right: 0;
+          object-fit: cover;
+          // position: absolute;
 
-          @include md {
-            transform: translateX(25%);
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            // position: absolute;
           }
-
-          @include xs {
-            transform: initial;
-          }
-
         }
       }
+
 
       .textbox {
         grid-column: 1 / span 5;
@@ -388,16 +388,24 @@
 
       &__second {
         height: initial;
+        grid-template-columns: 1fr;
+        display: initial;
 
-        picture {
-          padding-left: initial;
+        .scearn__second-computer {
           position: initial;
-        }
+          grid-column: initial;
+          width: initial;
 
-        z-index: 3;
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
+          picture {
+            padding-left: initial;
+            position: initial;
+          }
+
+          z-index: 3;
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+        }
       }
     }
   }

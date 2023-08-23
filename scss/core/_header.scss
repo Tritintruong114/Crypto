@@ -6,10 +6,11 @@
   z-index: 5;
   background: transparent;
   @include disflex;
-  transform: var(--time-duration) b;
+  transition: var(--time-duration) background-color;
+
 
   &.bgblue {
-    background-color: var(--ocean-cl);
+    background-color: var(--navi-cl);
   }
 
   .container {
