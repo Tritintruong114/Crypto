@@ -61,7 +61,7 @@ const menulist = document.querySelectorAll(".menu > li");
 menulist.forEach((menu, index) => {
 
   menu.addEventListener('click', (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     menulist.forEach((menu, i) => {
       menu.classList.remove('--active-menu')
