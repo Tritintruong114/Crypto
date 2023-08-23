@@ -1,0 +1,231 @@
+.about {
+  background-color: var(--ocean-cl);
+
+  .about__main {
+    padding-top: 190px;
+
+    .scabout {
+      padding-bottom: 232px;
+
+      .textbox {
+        text-align: center;
+        @include disflex;
+        flex-direction: column;
+
+        .desc {
+          max-width: 606px;
+        }
+      }
+
+      &__content {
+        padding-top: 112px;
+
+        .textbox {
+          @include disbet;
+          flex-direction: row;
+          margin-bottom: 20px;
+
+          .desc {
+            max-width: 496px;
+          }
+        }
+
+        &-wrapper {
+          display: grid;
+          gap: 28px;
+          grid-template-columns: 1fr 1fr;
+
+          .infobox {
+            display: flex;
+            padding: 58px 32px;
+            align-items: start;
+            gap: 24px;
+
+            .desc {
+              max-width: 402px;
+            }
+          }
+        }
+      }
+    }
+
+    .scmission {
+      position: relative;
+
+      .container {
+
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--gap);
+
+        .scmission__content {
+          grid-column: 1 / span 7;
+
+          .textbox:first-child {
+            margin-bottom: 40px;
+          }
+
+          .textbox {
+            .desc {
+              padding-bottom: 40px;
+              max-width: 620px;
+
+              @include md {
+                max-width: 400px;
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    .scmission__images {
+      position: absolute;
+      grid-column: 6 /span 6;
+      right: 0;
+      top: 0;
+      height: 100%;
+
+      picture {
+        height: 100%;
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+
+    @include xs {
+      padding-top: 130px;
+
+      .scabout {
+
+        .textbox {
+          text-align: initial;
+          display: initial;
+        }
+
+        &__content {
+
+          padding-top: 40px;
+
+          .textbox {
+            flex-direction: column;
+            margin-bottom: 16px;
+
+            .heading {
+              max-width: 266px;
+            }
+          }
+
+          &-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+
+            .infobox {
+              display: initial;
+            }
+          }
+        }
+      }
+
+      .scmission {
+        padding-top: 40px;
+        padding-bottom: 80px;
+
+        &__content {
+
+          .textbox {
+            .desc {
+              padding-bottom: 40px;
+            }
+          }
+        }
+      }
+
+      .sctimeline {
+
+        padding-bottom: 80px;
+
+        &__wrapper {
+          display: grid;
+          gap: 56px;
+          padding-top: 40px;
+
+          &-element {
+
+            display: flex;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--white-cl);
+
+            .circle {
+              margin-right: 54px;
+              height: 24px;
+              width: 24px;
+              display: block;
+              border-radius: 100%;
+              background-color: var(--white-cl);
+            }
+
+            .textbox {
+
+              .heading {
+                margin-bottom: 12px;
+              }
+
+              .desc {
+                max-width: 280px;
+              }
+            }
+          }
+        }
+      }
+
+      .scourteam {
+
+        padding-bottom: 80px;
+
+        &__wrapper {
+          padding-top: 24px;
+          display: grid;
+          gap: 16px;
+
+          &-element {
+            border-radius: var(--infobox-border);
+            background-color: var(--navi-cl);
+            padding: 24px 12px;
+            height: fit-content;
+
+            img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+
+            .user__info {
+              margin-top: 32px;
+              width: 100%;
+              @include disflex;
+
+
+              .--author {
+                margin-bottom: 12px;
+              }
+            }
+          }
+        }
+      }
+
+      .scinvestor {
+        padding-bottom: 80px;
+
+        .textbox {
+          margin-bottom: 48px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
