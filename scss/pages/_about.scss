@@ -2,18 +2,116 @@
   background-color: var(--ocean-cl);
 
   .about__main {
+    padding-top: 190px;
+
+    .scabout {
+      padding-bottom: 232px;
+
+      .textbox {
+        text-align: center;
+        @include disflex;
+        flex-direction: column;
+
+        .desc {
+          max-width: 606px;
+        }
+      }
+
+      &__content {
+        padding-top: 112px;
+
+        .textbox {
+          @include disbet;
+          flex-direction: row;
+          margin-bottom: 20px;
+
+          .desc {
+            max-width: 496px;
+          }
+        }
+
+        &-wrapper {
+          display: grid;
+          gap: 28px;
+          grid-template-columns: 1fr 1fr;
+
+          .infobox {
+            display: flex;
+            padding: 58px 32px;
+            align-items: start;
+            gap: 24px;
+
+            .desc {
+              max-width: 402px;
+            }
+          }
+        }
+      }
+    }
+
+    .scmission {
+      position: relative;
+
+      .container {
+
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--gap);
+
+        .scmission__content {
+          grid-column: 1 / span 7;
+
+          .textbox:first-child {
+            margin-bottom: 40px;
+          }
+
+          .textbox {
+            .desc {
+              padding-bottom: 40px;
+              max-width: 620px;
+
+              @include md {
+                max-width: 400px;
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    .scmission__images {
+      position: absolute;
+      grid-column: 6 /span 6;
+      right: 0;
+      top: 0;
+      height: 100%;
+
+      picture {
+        height: 100%;
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+
     @include xs {
       padding-top: 130px;
 
       .scabout {
 
+        .textbox {
+          text-align: initial;
+          display: initial;
+        }
 
         &__content {
 
           padding-top: 40px;
 
           .textbox {
-
+            flex-direction: column;
             margin-bottom: 16px;
 
             .heading {
@@ -23,7 +121,12 @@
 
           &-wrapper {
             display: grid;
+            grid-template-columns: 1fr;
             gap: 16px;
+
+            .infobox {
+              display: initial;
+            }
           }
         }
       }

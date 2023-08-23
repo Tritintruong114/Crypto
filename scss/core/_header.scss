@@ -71,7 +71,7 @@
         }
       }
 
-      @include sm {
+      @include md {
         @include disflex;
       }
 
@@ -150,17 +150,23 @@
         }
 
         .header__button {
-          display: block;
-          z-index: 3;
-          @include disflex;
-          width: 300px;
+          display: none;
 
-          a {
-            text-align: center;
+          @include md {
+            display: block;
+            z-index: 3;
+            @include disflex;
+            width: 300px;
+
+            a {
+              text-align: center;
+            }
           }
+
+
         }
 
-        @include xs {
+        @include md {
           flex-direction: column;
           position: absolute;
           border: none;
@@ -202,6 +208,13 @@
           }
         }
 
+        img {
+          display: none;
+
+          @include md {
+            display: block;
+          }
+        }
       }
 
       @include sm {
@@ -213,7 +226,7 @@
   .header__button {
     padding: 20px 32px;
 
-    @include sm {
+    @include md {
       display: none;
     }
   }
