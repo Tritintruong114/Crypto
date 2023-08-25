@@ -293,6 +293,21 @@ sup {
   line-height: var(--lh-posttitle);
 }
 
+.--coin {
+  font-family: sb;
+  font-size: var(--fs-coin);
+  line-height: var(--lh-coin);
+  letter-spacing: var(--ls-coin);
+  color: var(--white-cl);
+}
+
+.--tag-coin {
+  padding: 8px 10px;
+  background-color: var(--navi-cl);
+  width: fit-content;
+  border-radius: 1000px;
+}
+
 .--downloadbtn {
   height: var(--downloadbtn-height);
   background: var(--sky-cl);

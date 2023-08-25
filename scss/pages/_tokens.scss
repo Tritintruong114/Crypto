@@ -1,0 +1,51 @@
+.tokens {
+  background: var(--ocean-cl);
+
+
+  @include xs {
+    &__main {
+      padding-top: var(--paddingtop-sc);
+
+
+      .container {
+        .textbox {
+          margin-bottom: 48px;
+        }
+
+        .tokens__main-wrapper {
+          flex-shrink: 0;
+
+          &.--mb-version {
+            display: flex;
+            // flex-direction: column;
+            overflow: scroll;
+            margin-bottom: 80px;
+
+            .element {
+              flex-shrink: 0;
+              width: 100%;
+              border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+              &__info {
+                padding: 32px 0;
+
+                &-detail {
+                  margin-top: 16px;
+                  display: flex;
+                  align-items: center;
+                  gap: 16px;
+                }
+              }
+
+
+              .link {
+                text-decoration: underline;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

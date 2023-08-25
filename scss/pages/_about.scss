@@ -2,7 +2,7 @@
   background-color: var(--ocean-cl);
 
   .about__main {
-    padding-top: 190px;
+    padding-top: var(--paddingtop-sc);
 
     .scabout {
       padding-bottom: 232px;
@@ -215,7 +215,7 @@
 
 
     @include xs {
-      padding-top: 130px;
+      padding-top: var(--paddingtop-sc);
 
       .scabout {
         padding-bottom: initial;

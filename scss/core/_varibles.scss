@@ -3,7 +3,7 @@
   --cubic: cubic-bezier(0.59, 0.29, 0.15, 0.93);
   //Gap
   --gap: 26px;
-
+  --paddingtop-sc: 190px;
   //Columms
   --grid-columns: repeat(12, 1fr);
   --grid-columns-span: 1 / span 12;
@@ -109,6 +109,7 @@
 
   //Mobile
   @include sm {
+    --paddingtop-sc: 130px;
     --container-padding: 15px;
     //Mobile height
     --tabbtn-height: 48px;
@@ -163,6 +164,10 @@
     --lh-posttitle: 31px;
     --ls-posttitle: 0px;
     --container-max-width: 100%;
+
+    --fs-coin: 18px;
+    --lh-coin: 20px;
+    --ls-coin: 0px;
   }
 
   @keyframes jumpInfinite {
