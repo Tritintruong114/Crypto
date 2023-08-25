@@ -100,6 +100,11 @@
   --lh-postmain: 40px;
   --ls-postmain: 0.28px;
 
+  //blog page h3 title 
+  --fs-posth3: 28px;
+  --lh-posth3: 30px;
+  --ls-posth3: 0.28px;
+
   //Responsive
   @include md {
     --container-max-width: 1140px;

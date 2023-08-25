@@ -1,6 +1,7 @@
 .main {
   background: var(--ocean-cl);
   position: relative;
+  overflow: hidden;
 
   // position: relative;
   @include xs {
@@ -8,7 +9,7 @@
   }
 
   .schero {
-    min-height: 100vh;
+    min-height: 1000px;
     // height: 100vh;
     position: relative;
     overflow: hidden;
@@ -101,30 +102,6 @@
         position: initial;
         padding: 0 29px;
         margin-bottom: 32px;
-      }
-    }
-
-    .blur__hero-light {
-      position: absolute;
-      transform: translate(10%, -10%);
-      // z-index: 1;
-      height: 130%;
-
-      @include xs {
-        height: initial;
-        top: 40%;
-        // z-index: 0;
-      }
-    }
-
-    .blur__hero-dark {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0.4;
-
-      @include xs {
-        display: none;
       }
     }
   }
@@ -327,25 +304,25 @@
       gap: var(--gap);
       height: 585px;
       grid-template-columns: repeat(12, 1fr);
+      position: relative;
 
       .scearn__second-computer {
         grid-column: 6 / span 7;
+        height: 100%;
         position: absolute;
-        right: 0;
-        width: 50%;
+        width: 971px;
 
-        picture {
-          height: 100%;
+        img {
           width: 100%;
-          right: 0;
-          object-fit: cover;
-          // position: absolute;
+          height: 100%;
+        }
+
+        @include xs {
+          position: relative;
+          width: initial;
 
           img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            // position: absolute;
+            height: initial;
           }
         }
       }

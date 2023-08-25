@@ -141,6 +141,13 @@ sup {
     letter-spacing: var(--ls-pr);
   }
 
+  &.--posth3 {
+    font-family: sb;
+    font-size: var(--fs-posth3);
+    line-height: var(--lh-posth3);
+    letter-spacing: var(--ls-posth3);
+  }
+
   @include sm {
 
     &.--yellow-left::before,
