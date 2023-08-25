@@ -18,7 +18,6 @@
   --hover-btn: #031fb4;
   --button-cl-opacity: rgba(255, 255, 255, 0.1);
 
-  //Height
   --header-height: 132px;
   --button-height: 70px;
   --subscribe-height: 64px;
@@ -96,6 +95,11 @@
   --lh-posttitle: 31px;
   --ls-posttitle: 0px;
 
+  //blog page title main
+  --fs-postmain: 28px;
+  --lh-postmain: 40px;
+  --ls-postmain: 0.28px;
+
   //Responsive
   @include md {
     --container-max-width: 1140px;
@@ -165,9 +169,15 @@
     --ls-posttitle: 0px;
     --container-max-width: 100%;
 
+
     --fs-coin: 18px;
     --lh-coin: 20px;
     --ls-coin: 0px;
+
+
+    --fs-postmain: 22px;
+    --lh-postmain: 31px;
+    --ls-postmain: 0px;
   }
 
   @keyframes jumpInfinite {

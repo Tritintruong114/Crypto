@@ -86,6 +86,12 @@ sup {
     padding: 42px 24px 36px 24px;
     display: grid;
 
+    .--bloghero {
+      font-size: var(--fs-postmain);
+      line-height: var(--lh-postmain);
+      letter-spacing: var(--ls-postmain);
+    }
+
     .desc {
       max-height: 97px;
       margin-bottom: 40px;
@@ -323,6 +329,11 @@ sup {
   &:hover {
     background-color: var(--hover-btn);
   }
+}
+
+.link {
+  text-decoration: underline;
+  color: var(--white-cl);
 }
 
 .--mainbtn {
@@ -615,5 +626,21 @@ sup {
 
   @include xs {
     display: initial;
+  }
+}
+
+.--tab {
+  background-color: var(--button-cl-opacity);
+  color: var(--white-cl);
+  width: fit-content;
+  padding: 7px 24px;
+  border-radius: 80px;
+
+  &.--active {
+    background-color: var(--sky-cl);
+  }
+
+  @include xs {
+    padding: 11px 0;
   }
 }
