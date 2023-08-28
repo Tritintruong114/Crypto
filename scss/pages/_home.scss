@@ -21,6 +21,10 @@
     @include xs {
       height: 100%;
       padding-top: 116px;
+
+      br {
+        display: none;
+      }
     }
 
     .blur__dark-top {
@@ -152,7 +156,7 @@
 
         @include xs {
           text-align: start;
-          max-width: 314px;
+          max-width: 100%;
         }
       }
 
@@ -331,6 +335,10 @@
           width: 100%;
           height: 100%;
           transform: translateX(5%);
+
+          @include xs {
+            transform: initial;
+          }
         }
 
         @include xs {
@@ -422,6 +430,11 @@
         flex-direction: column;
         justify-content: center;
 
+        @include md {
+
+          grid-column: 1 / span 4;
+        }
+
         .--mainbtn {
           margin-top: 32px;
           width: fit-content;
@@ -457,7 +470,7 @@
           text-align: center;
 
           .desc {
-            max-width: 330px;
+            max-width: 100%;
             margin-bottom: 15px;
           }
         }
@@ -580,13 +593,26 @@
         border-radius: var(--infobox-border);
         overflow: hidden;
         cursor: pointer;
+        @include transistion;
+
+        img {
+          @include transistion;
+        }
 
         &:hover {
+
           .overlay {
-            opacity: 0.3;
+            opacity: 0.6;
           }
 
+          .scvideo__video-play {
+            height: 120px;
+            width: 120px;
+          }
 
+          img {
+            transform: scale(1.1);
+          }
         }
 
         .overlay {
@@ -595,7 +621,7 @@
           height: 100%;
           width: 100%;
           z-index: 1;
-          opacity: 0.0;
+          opacity: 0.3;
           @include transistion;
         }
 
@@ -614,6 +640,9 @@
           @include centerAbs;
           @include disflex;
           border-radius: 100%;
+          @include transistion;
+
+
         }
       }
     }
@@ -691,6 +720,10 @@
 
       .desc {
         max-width: 461px;
+
+        @include xs {
+          max-width: initial;
+        }
       }
     }
 
@@ -738,7 +771,7 @@
         margin-bottom: 24px;
 
         .desc {
-          max-width: 461px;
+          // max-width: 461px;
         }
       }
     }
@@ -768,7 +801,7 @@
           display: initial;
 
           .desc {
-            max-width: 330px;
+            // max-width: 330px;
           }
         }
 

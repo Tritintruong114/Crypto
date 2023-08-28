@@ -105,6 +105,11 @@
   --lh-posth3: 30px;
   --ls-posth3: 0.28px;
 
+
+  //Quote p
+  --fs-quote: 22px;
+  --lh-quote: 38px;
+
   //Responsive
   @include md {
     --container-max-width: 1140px;
@@ -183,6 +188,9 @@
     --fs-postmain: 22px;
     --lh-postmain: 31px;
     --ls-postmain: 0px;
+
+    --fs-quote: 16px;
+    --lh-quote: 26px;
   }
 
   @keyframes jumpInfinite {

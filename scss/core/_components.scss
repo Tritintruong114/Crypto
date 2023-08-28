@@ -55,7 +55,7 @@ sup {
     @include xs {
       .desc {
         margin-bottom: 18px;
-        max-width: 330px;
+        max-width: 100%;
       }
     }
 
@@ -101,18 +101,24 @@ sup {
     .user__info {
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 38px;
+
+      &-detail {
+        p {
+          line-height: initial;
+        }
+      }
     }
   }
 
   @include md {
     .desc {
-      max-width: 75%;
+      // max-width: 75%;
     }
   }
 
   @include xs {
     .desc {
-      max-width: 330px;
+      // max-width: 330px;
     }
   }
 }
@@ -304,6 +310,7 @@ sup {
   font-family: sb;
   font-size: var(--fs-posttitle);
   line-height: var(--lh-posttitle);
+  @include transistion;
 }
 
 .--coin {
@@ -351,6 +358,11 @@ sup {
   border-radius: var(--button-border);
   gap: 8px;
   @include transistion;
+  width: fit-content;
+
+  &.--contactbtn {
+    width: 100%;
+  }
 
   &:hover {
     background-color: var(--hover-btn);
@@ -451,6 +463,14 @@ sup {
 
       .desc {
         margin-bottom: 25px;
+
+        @include md {
+          max-width: 80%;
+        }
+
+        @include xs {
+          max-width: 100%;
+        }
       }
 
       padding: 44px 33px 0 33px;
@@ -571,10 +591,26 @@ sup {
     position: relative;
     width: 100%;
     object-fit: cover;
+    @include transistion;
   }
 
   .postthumbnail {
     position: relative;
+  }
+
+
+
+  &:hover {
+
+    @include transistion;
+
+    .postThumbnail {
+      transform: scale(1.2);
+    }
+
+    .--posttitle {
+      opacity: 0.6;
+    }
   }
 
   .tag__container {
