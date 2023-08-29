@@ -18,6 +18,7 @@
   --hover-btn: #031fb4;
   --button-cl-opacity: rgba(255, 255, 255, 0.1);
 
+  --post-gap: 26px;
   --header-height: 132px;
   --button-height: 70px;
   --subscribe-height: 64px;
@@ -125,10 +126,11 @@
   @include sm {
     --paddingtop-sc: 130px;
     --container-padding: 15px;
+    --post-gap: 16px;
     //Mobile height
     --tabbtn-height: 48px;
     --subscribe-height: 70px;
-    --header-height: 93px;
+    --header-height: 72px;
     --downloadbtn-height: 70px;
     --tagbtn-height: 18px;
     //Heading 1

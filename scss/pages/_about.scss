@@ -4,10 +4,25 @@
   .about__main {
     padding-top: var(--paddingtop-sc);
 
+
+    .about_blur {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      transform: translateX(-100px);
+    }
+
     .scabout {
       padding-bottom: 232px;
+      position: relative;
+
+      .container {
+        z-index: 3;
+      }
 
       .textbox {
+        z-index: 1;
         text-align: center;
         @include disflex;
         flex-direction: column;
@@ -19,6 +34,7 @@
 
       &__content {
         padding-top: 112px;
+        z-index: 1;
 
         .textbox {
           @include disbet;
@@ -34,6 +50,7 @@
           display: grid;
           gap: 28px;
           grid-template-columns: 1fr 1fr;
+          z-index: 1;
 
           .infobox {
             display: flex;

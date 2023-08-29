@@ -151,6 +151,7 @@ sup {
     font-family: sb;
     font-size: var(--fs-posth3);
     line-height: var(--lh-posth3);
+    color: var(--white-cl);
     letter-spacing: var(--ls-posth3);
   }
 
@@ -567,7 +568,7 @@ sup {
   @include xs {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--post-gap);
   }
 }
 
@@ -579,7 +580,7 @@ sup {
   @include xs {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--post-gap);
   }
 }
 
@@ -590,6 +591,7 @@ sup {
   .postThumbnail {
     position: relative;
     width: 100%;
+    aspect-ratio: 382/215;
     object-fit: cover;
     @include transistion;
   }
@@ -686,4 +688,91 @@ sup {
   @include xs {
     padding: 11px 0;
   }
+}
+
+.subscribe {
+  padding: 84px 0;
+  background: var(--sky-cl);
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gap);
+
+    .subscribe-content {
+      display: flex;
+      text-align: left;
+      grid-column: 1 / span 7;
+
+      .heading {
+        margin-left: 25px;
+        max-width: 572px;
+      }
+    }
+
+    .subscribe-form {
+      grid-column: 8/span 5;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      .input {
+        width: 100%;
+        height: 80px;
+        padding: 27px 0 27px 16px;
+        border-radius: 100px;
+        color: #010725;
+        outline: none;
+      }
+
+      .--mainbtn {
+        position: absolute;
+        right: 8px;
+        height: 64px;
+      }
+    }
+
+    @include xs {
+
+
+      grid-template-columns: 1fr;
+
+      .subscribe-content {
+        grid-column: initial;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .heading {
+          max-width: 100%;
+          text-align: center;
+          margin-left: 0;
+        }
+      }
+
+      .subscribe-form {
+        grid-column: initial;
+        flex-direction: column;
+
+        .--mainbtn {
+          position: relative;
+          background-color: #031FB4;
+          margin-top: 20px;
+        }
+
+
+
+      }
+
+    }
+  }
+
+  @include xs {
+    .subscribe {
+      padding: 80px 0;
+
+
+    }
+  }
+
 }

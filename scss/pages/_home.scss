@@ -294,11 +294,16 @@
     .container {
       display: grid;
       gap: 100px;
+
+      .blur_computer {
+        position: absolute;
+      }
     }
 
     &__first {
       display: grid;
       gap: var(--gap);
+      z-index: 2;
       grid-template-columns: repeat(12, 1fr);
 
       picture {
@@ -320,10 +325,13 @@
 
     &__second {
       display: grid;
+      z-index: 2;
       gap: var(--gap);
       height: 585px;
       grid-template-columns: repeat(12, 1fr);
       position: relative;
+
+
 
       .scearn__second-computer {
         grid-column: 6 / span 7;
@@ -485,11 +493,18 @@
   .scuserfeedback {
     padding-top: 200px;
     padding-bottom: 80px;
+    position: relative;
+
+    .blur__user {
+      position: absolute;
+      top: 0;
+    }
 
     &__wrapper {
       display: flex;
       // grid-template-columns: 1fr 1fr;
       // gap: 28px;
+      position: relative;
       padding-top: 33px;
       padding-bottom: 40px;
       overflow: hidden;
@@ -506,6 +521,9 @@
         border-radius: var(--infobox-border);
         opacity: 0.3;
         transition: var(--time-duration) opacity;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         &.is-selected {
           opacity: 1;
@@ -831,4 +849,25 @@
 
 .slider__container {
   margin-bottom: 32px;
+}
+
+.flickity-page-dots {
+
+  position: absolute;
+  z-index: 6;
+  display: flex;
+  bottom: 0;
+  gap: 14px;
+
+  .dot {
+    height: 14px;
+    width: 14px;
+    background-color: var(--white-cl);
+    border-radius: 100%;
+    opacity: 0.3;
+
+    &.is-selected {
+      opacity: 1;
+    }
+  }
 }

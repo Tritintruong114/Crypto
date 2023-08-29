@@ -3,11 +3,17 @@
   background: var(--ocean-cl);
   padding-bottom: 120px;
 
+  .subscribe {
+    margin: 130px 0;
+  }
+
+
+
   .container {
     display: grid;
-
     grid-template-columns: var(--grid-columns);
     gap: var(--gap);
+
 
 
     h2 {
@@ -67,7 +73,7 @@
       @include disflex;
       background-color: var(--navi-cl);
       border-radius: var(--infobox-border);
-      margin: 64px 64px;
+      margin: 24px 24px;
 
       p {
         font-size: var(--fs-quote);
@@ -77,13 +83,35 @@
 
 
       @include xxs {
-        margin: 40px 0;
+        margin: 20px 0;
         padding: 32px;
       }
     }
 
+
+
     @include xs {
       display: block;
+    }
+  }
+
+  .scdetail__posts {
+    .textbox {
+      grid-column: 1/ span 12;
+
+      &.--title {
+        max-width: initial;
+        @include disbet;
+
+        @include xs {
+          flex-direction: column;
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    .posts__container {
+      grid-column: 1 / span 12;
     }
   }
 

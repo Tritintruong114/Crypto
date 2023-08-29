@@ -14,7 +14,7 @@ const carousel = document.querySelector('.scuserfeedback__wrapper')
 
 
 
-if (window.matchMedia("(max-width: 769px)").matches) {
+if (window.matchMedia("(max-width: 991px)").matches) {
   /* the viewport is at least 400 pixels wide */
   $(".scuserfeedback__wrapper").flickity({
     cellAlign: "center",
@@ -327,4 +327,28 @@ about.addEventListener('click', () => {
   </main>
   
   `;
+})
+
+//set height of userfeeadback
+
+const arr = document.querySelectorAll('.scuserfeedback__wrapper-element')
+let arrOfEl = [];
+let height = arr.forEach((el, index) => {
+  arrOfEl.push(el.offsetHeight);
+  console.log(Math.max(...arrOfEl))
+  arr.forEach((el, index) => {
+    el.style.height = `${Math.max(...arrOfEl)}px`
+  })
+
+  console.log(arrOfEl)
+})
+
+
+
+
+
+window.addEventListener('resize', () => {
+  if (screen.width === 991) {
+    location.reload()
+  }
 })
