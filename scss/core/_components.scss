@@ -153,6 +153,14 @@ sup {
     line-height: var(--lh-posth3);
     color: var(--white-cl);
     letter-spacing: var(--ls-posth3);
+
+  }
+
+  &.--error {
+    font-size: var(--fs-error);
+    line-height: var(--lh-error);
+    font-family: sb;
+    color: #0328EE
   }
 
   @include sm {

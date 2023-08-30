@@ -111,7 +111,12 @@
   --fs-quote: 22px;
   --lh-quote: 38px;
 
+
+  //Error
+  --fs-error: 180px;
+  --lh-error: 160px;
   //Responsive
+
   @include md {
     --container-max-width: 1140px;
   }
@@ -193,6 +198,9 @@
 
     --fs-quote: 16px;
     --lh-quote: 26px;
+
+    --fs-error: 180px;
+    --lh-error: 160px
   }
 
   @keyframes jumpInfinite {
