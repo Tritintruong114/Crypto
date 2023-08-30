@@ -6,6 +6,8 @@
   @include disflex;
   position: relative;
 
+
+
   .blur_center {
     position: absolute;
   }
@@ -27,6 +29,24 @@
       display: flex;
       gap: 14px;
       margin-top: 40px;
+
+      @include xs {
+        flex-direction: column;
+        width: 100%;
+
+        .--mainbtn {
+          width: 100%;
+        }
+      }
     }
+
+
+  }
+
+  @include xs {
+    height: 100%;
+    width: 100%;
+    padding-top: 190px;
+    padding-bottom: 190px;
   }
 }
