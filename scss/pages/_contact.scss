@@ -151,6 +151,7 @@
 
             .question {
               @include disbet;
+              @include transistion;
 
               .icon__plus {
                 background-color: var(--white-cl);
@@ -170,12 +171,7 @@
                   @include transistion;
                 }
 
-                &.--showmenu {
-                  &::after {
 
-                    transform: rotate(0);
-                  }
-                }
               }
             }
 
@@ -184,13 +180,23 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.20);
 
             .desc {
-              display: none;
+              visibility: hidden;
               height: 0;
+            }
 
-              &.--active {
+            &.--active {
+              .desc {
+                visibility: visible;
                 margin-top: 20px;
-                display: block;
                 height: fit-content;
+                @include transistion;
+              }
+
+              .icon__plus {
+                &::after {
+
+                  transform: rotate(0);
+                }
               }
             }
           }
