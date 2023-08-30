@@ -114,3 +114,44 @@ faqArr.forEach((element, index) => {
   }
   )
 })
+
+//tab changes
+let tabArray = document.querySelectorAll('.--tab')
+let postContainers = document.querySelectorAll('.posts__container')
+tabArray.forEach((tab, index) => {
+  tab.addEventListener('click', () => {
+    if (tab.classList.contains('--active')) {
+
+    } else {
+      tabArray.forEach((tab) => {
+        tab.classList.remove('--active')
+      })
+      postContainers.forEach((container) => {
+        container.classList.remove('--showpost')
+        container.classList.add('--hide')
+      })
+      postContainers[index].classList.remove('--hide')
+      postContainers[index].classList.add('--showPosts')
+      tab.classList.add('--active')
+    }
+  })
+})
+
+window.addEventListener("scroll", () => {
+  const scroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const progress =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  const scrolled = (scroll / progress) * 100;
+  document.querySelector(".progressbar").style.width = scrolled + "%";
+  // document.querySelector(".progress").style.width = scrolled + "%";
+});
+
+const backToTopBtn = document.querySelector('.backToTopBtn')
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+});

@@ -236,4 +236,20 @@
     align-items: center;
     padding-bottom: 1px;
   }
+
+  .progressbar__container {
+    width: 100%;
+    background-color: rgba(225, 225, 225, 0.1);
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+
+    .progressbar {
+      background: var(--sky-cl);
+      height: 100%;
+      width: 0;
+    }
+  }
+
+
 }

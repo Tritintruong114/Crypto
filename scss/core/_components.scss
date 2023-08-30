@@ -590,6 +590,10 @@ sup {
     flex-direction: column;
     gap: var(--post-gap);
   }
+
+  &.--hide {
+    display: none;
+  }
 }
 
 .post {
@@ -738,6 +742,19 @@ sup {
         right: 8px;
         height: 64px;
       }
+
+      .error {
+        color: red;
+        position: absolute;
+        bottom: -10px;
+        left: 20px;
+      }
+
+      &.--showError {
+        .input {
+          outline: red;
+        }
+      }
     }
 
     @include xs {
@@ -783,4 +800,16 @@ sup {
     }
   }
 
+}
+
+
+.backToTopBtn {
+  position: fixed;
+  background: var(--sky-cl);
+  height: 45px;
+  width: 45px;
+  bottom: 3%;
+  right: 3%;
+  z-index: 3;
+  padding: 15px;
 }
