@@ -12,7 +12,14 @@ toggleBurger.addEventListener("click", (e) => {
 const carousel = document.querySelector('.scuserfeedback__wrapper')
 // const flck = carousel.data('flickity')
 
-
+const backToTopBtn = document.querySelector('.backToTopBtn')
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+});
 
 if (window.matchMedia("(max-width: 991px)").matches) {
   /* the viewport is at least 400 pixels wide */
@@ -48,16 +55,15 @@ window.addEventListener("scroll", () => {
   // let heightOfHero = triggerButton.offsetHeight; //Height of sc Hero
   if (y !== 0) {
     headerHeight.classList.add("bgblue");
-    // backToTop.classList.add("showButton");
+    backToTopBtn.classList.add("showButton");
   } else {
     headerHeight.classList.remove("bgblue");
-    // backToTop.classList.remove("showButton");
+    backToTopBtn.classList.remove("showButton");
   }
 });
 
 const menulist = document.querySelectorAll(".menu > li");
 
-// console.log(menulist)
 menulist.forEach((menu, index) => {
 
   menu.addEventListener('click', (e) => {
@@ -79,12 +85,10 @@ const arr = document.querySelectorAll('.scuserfeedback__wrapper-element')
 let arrOfEl = [];
 let height = arr.forEach((el, index) => {
   arrOfEl.push(el.offsetHeight);
-  console.log(Math.max(...arrOfEl))
   arr.forEach((el, index) => {
     el.style.height = `${Math.max(...arrOfEl)}px`
   })
 
-  console.log(arrOfEl)
 })
 
 
@@ -147,11 +151,29 @@ window.addEventListener("scroll", () => {
   // document.querySelector(".progress").style.width = scrolled + "%";
 });
 
-const backToTopBtn = document.querySelector('.backToTopBtn')
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
-});
+
+
+imagesLoaded(document.querySelector("body"), function (instance) {
+  if (instance) {
+    let i = 0;
+    let width = 0;
+    let progress = document.querySelector(".loading__bar-inside");
+    let percent = document.querySelector(".loading__percent");
+
+    if (i == 0) {
+      const frame = () => {
+        if (width >= 100) {
+          clearInterval(id);
+          i = 0;
+        } else {
+          width++;
+          progress.style.width = width++ + "%";
+          percent.textContent = width + "%";
+        }
+      };
+      let id = setInterval(frame, 3);
+    }
+  };
+  document.querySelector(".loading").classList.add("--hiden")
+
+})

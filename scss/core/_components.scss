@@ -212,7 +212,7 @@ sup {
     &-inside {
       background: var(--darkYellow-cl);
       height: 4px;
-      animation: loadingScreen 4s;
+      animation: loadingScreen 1s;
       border-radius: 100%;
       @include transistion;
     }
@@ -812,4 +812,28 @@ sup {
   right: 3%;
   z-index: 3;
   padding: 15px;
+  opacity: 0;
+
+  @include transistion;
+
+  &.showButton {
+    opacity: 1;
+  }
+}
+
+.loading__percent {
+  color: var(--white-cl);
+
+}
+
+.loading__bar {
+  background-color: var(--white-cl);
+  height: 10px;
+
+  .loading__bar-inside {
+    background: var(--sky-cl);
+    height: 10px;
+    width: 0;
+    border-radius: 0;
+  }
 }

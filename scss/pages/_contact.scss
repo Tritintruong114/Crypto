@@ -69,10 +69,19 @@
               border-radius: 100px;
               width: 364px;
 
+
+
               @include xs {
                 width: 100%;
               }
+            }
 
+            input:focus {
+              outline: 2px solid var(--sky-cl);
+            }
+
+            textarea:focus {
+              outline: 2px solid var(--sky-cl);
             }
 
 

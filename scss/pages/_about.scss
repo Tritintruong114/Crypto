@@ -145,6 +145,8 @@
           gap: 80px;
 
           &-element {
+            
+
             display: flex;
             padding-bottom: 40px;
             border-bottom: 1px solid var(--white-cl);
@@ -195,10 +197,9 @@
             height: fit-content;
 
             img {
-              height: 100%;
-              width: 100%;
-              object-fit: cover;
-            }
+                aspect-ratio: 327/400;
+                width: 100%;
+              }
 
             .user__info {
               margin-top: 32px;
