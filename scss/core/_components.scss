@@ -748,6 +748,15 @@ sup {
         position: absolute;
         bottom: -10px;
         left: 20px;
+
+        @include md {
+          bottom: -30px;
+        }
+
+        @include xs {
+          bottom: 37%;
+          left: 4%;
+        }
       }
 
       &.--showError {
