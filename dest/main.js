@@ -187,26 +187,46 @@ const form = document.querySelector('.form-field')
 form?.addEventListener('submit', function (e) {
   // prevent the form from submitting
   e.preventDefault();
-  if (!form.Name.value && !form.Email.value) {
+  if (!form.Name.value && !form.Email.value && !form.Subject.value && !form.Company.value) {
     userName.classList.add('--required')
     userEmail.classList.add('--required')
     document.querySelector('.--name').style.display = 'block'
     document.querySelector('.--email').style.display = 'block'
+    document.querySelector('.--subject').style.display = 'block'
+    userHow.classList.add('--required')
+    document.querySelector('.--company').style.display = 'block'
+    userCompany.classList.add('--required')
   } else if (!form.Name.value && form.Email.value) {
     userName.classList.add('--required')
     document.querySelector('.--name').style.display = 'block'
   } else if (form.Name.value && !form.Email.value) {
     userEmail.classList.add('--required')
     document.querySelector('.--email').style.display = 'block'
-  } else if (form) {
-    userName.classList.remove('--required')
-    userEmail.classList.remove('--required')
+  } else if (form.Name.value && form.Email.value && !form.Subject.value && !form.Company.value) {
+    document.querySelector('.--subject').style.display = 'block'
+    userHow.classList.add('--required')
+    document.querySelector('.--company').style.display = 'block'
+    userCompany.classList.add('--required')
+  } else if (form.Name.value && form.Email.value && form.Subject.value && form.Company.value) {
+    document.querySelector('.--company').style.display = 'block'
+    userCompany.classList.add('--required')
+  }
+  else if (form.Name.value && form.Email.value && form.Company.value && !form.Subject.value) {
+    document.querySelector('.--subject').style.display = 'block'
+    userHow.classList.add('--required')
+  } else if (form.Name.value && form.Email.value && form.Company.value && form.Subject.value) {
+    // userName.classList.remove('--required')
+    // userEmail.classList.remove('--required')
+    // userCompany.classList.remove('--required')
+    // userHow.classList.remove('--required')
     form.Name.value = ''
     form.Email.value = ''
     form.Company.value = ''
     form.Textarea.value = ''
-    document.querySelector('.--name').style.display = 'none'
-    document.querySelector('.--email').style.display = 'none'
+    // document.querySelector('.--name').style.display = 'none'
+    // document.querySelector('.--company').style.display = 'none'
+    // document.querySelector('.--subject').style.display = 'none'
+    // document.querySelector('.--email').style.display = 'none'
   }
 });
 

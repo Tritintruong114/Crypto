@@ -621,6 +621,7 @@
 
           .overlay {
             opacity: 0.6;
+            pointer-events: none;
           }
 
           .scvideo__video-play {
