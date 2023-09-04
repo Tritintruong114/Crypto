@@ -55,7 +55,7 @@ sup {
     @include xs {
       .desc {
         margin-bottom: 18px;
-        max-width: 330px;
+        max-width: 100%;
       }
     }
 
@@ -86,6 +86,12 @@ sup {
     padding: 42px 24px 36px 24px;
     display: grid;
 
+    .--bloghero {
+      font-size: var(--fs-postmain);
+      line-height: var(--lh-postmain);
+      letter-spacing: var(--ls-postmain);
+    }
+
     .desc {
       max-height: 97px;
       margin-bottom: 40px;
@@ -95,18 +101,24 @@ sup {
     .user__info {
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 38px;
+
+      &-detail {
+        p {
+          line-height: initial;
+        }
+      }
     }
   }
 
   @include md {
     .desc {
-      max-width: 75%;
+      // max-width: 75%;
     }
   }
 
   @include xs {
     .desc {
-      max-width: 330px;
+      // max-width: 330px;
     }
   }
 }
@@ -126,6 +138,29 @@ sup {
     font-size: var(--fs-h2);
     line-height: var(--lh-h2);
     letter-spacing: var(--ls-h2);
+  }
+
+  &.--pr {
+    font-family: sb;
+    font-size: var(--fs-pr);
+    line-height: var(--lh-pr);
+    letter-spacing: var(--ls-pr);
+  }
+
+  &.--posth3 {
+    font-family: sb;
+    font-size: var(--fs-posth3);
+    line-height: var(--lh-posth3);
+    color: var(--white-cl);
+    letter-spacing: var(--ls-posth3);
+
+  }
+
+  &.--error {
+    font-size: var(--fs-error);
+    line-height: var(--lh-error);
+    font-family: sb;
+    color: #0328EE
   }
 
   @include sm {
@@ -177,7 +212,7 @@ sup {
     &-inside {
       background: var(--darkYellow-cl);
       height: 4px;
-      animation: loadingScreen 4s;
+      animation: loadingScreen 1s;
       border-radius: 100%;
       @include transistion;
     }
@@ -272,6 +307,7 @@ sup {
 }
 
 .--tag {
+  width: fit-content;
   font-family: sr;
   font-size: var(--fs-texttag);
   color: var(--white-cl);
@@ -283,6 +319,22 @@ sup {
   font-family: sb;
   font-size: var(--fs-posttitle);
   line-height: var(--lh-posttitle);
+  @include transistion;
+}
+
+.--coin {
+  font-family: sb;
+  font-size: var(--fs-coin);
+  line-height: var(--lh-coin);
+  letter-spacing: var(--ls-coin);
+  color: var(--white-cl);
+}
+
+.--tag-coin {
+  padding: 8px 10px;
+  background-color: var(--navi-cl);
+  width: fit-content;
+  border-radius: 1000px;
 }
 
 .--downloadbtn {
@@ -302,6 +354,11 @@ sup {
   }
 }
 
+.link {
+  text-decoration: underline;
+  color: var(--white-cl);
+}
+
 .--mainbtn {
   background-color: var(--sky-cl);
   @include disflex;
@@ -310,6 +367,11 @@ sup {
   border-radius: var(--button-border);
   gap: 8px;
   @include transistion;
+  width: fit-content;
+
+  &.--contactbtn {
+    width: 100%;
+  }
 
   &:hover {
     background-color: var(--hover-btn);
@@ -410,6 +472,14 @@ sup {
 
       .desc {
         margin-bottom: 25px;
+
+        @include md {
+          max-width: 80%;
+        }
+
+        @include xs {
+          max-width: 100%;
+        }
       }
 
       padding: 44px 33px 0 33px;
@@ -506,7 +576,7 @@ sup {
   @include xs {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--post-gap);
   }
 }
 
@@ -518,7 +588,11 @@ sup {
   @include xs {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--post-gap);
+  }
+
+  &.--hide {
+    display: none;
   }
 }
 
@@ -529,11 +603,28 @@ sup {
   .postThumbnail {
     position: relative;
     width: 100%;
+    aspect-ratio: 382/215;
     object-fit: cover;
+    @include transistion;
   }
 
   .postthumbnail {
     position: relative;
+  }
+
+
+
+  &:hover {
+
+    @include transistion;
+
+    .postThumbnail {
+      transform: scale(1.2);
+    }
+
+    .--posttitle {
+      opacity: 0.6;
+    }
   }
 
   .tag__container {
@@ -592,5 +683,166 @@ sup {
 
   @include xs {
     display: initial;
+  }
+}
+
+.--tab {
+  background-color: var(--button-cl-opacity);
+  color: var(--white-cl);
+  width: fit-content;
+  padding: 7px 24px;
+  border-radius: 80px;
+
+  &.--active {
+    background-color: var(--sky-cl);
+  }
+
+  @include xs {
+    padding: 11px 0;
+  }
+}
+
+.subscribe {
+  padding: 84px 0;
+  background: var(--sky-cl);
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gap);
+
+    .subscribe-content {
+      display: flex;
+      text-align: left;
+      grid-column: 1 / span 7;
+
+      .heading {
+        margin-left: 25px;
+        max-width: 572px;
+      }
+    }
+
+    .subscribe-form {
+      grid-column: 8/span 5;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      .input {
+        width: 100%;
+        height: 80px;
+        padding: 27px 0 27px 16px;
+        border-radius: 100px;
+        color: #010725;
+        outline: none;
+      }
+
+      .--mainbtn {
+        position: absolute;
+        right: 8px;
+        height: 64px;
+      }
+
+      .error {
+        color: red;
+        position: absolute;
+        bottom: -10px;
+        left: 20px;
+
+        @include md {
+          bottom: -30px;
+        }
+
+        @include xs {
+          bottom: 37%;
+          left: 4%;
+        }
+      }
+
+      &.--showError {
+        .input {
+          outline: red;
+        }
+      }
+    }
+
+    @include xs {
+
+
+      grid-template-columns: 1fr;
+
+      .subscribe-content {
+        grid-column: initial;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .heading {
+          max-width: 100%;
+          text-align: center;
+          margin-left: 0;
+        }
+      }
+
+      .subscribe-form {
+        grid-column: initial;
+        flex-direction: column;
+
+        .--mainbtn {
+          position: relative;
+          background-color: #031FB4;
+          margin-top: 20px;
+        }
+
+
+
+      }
+
+    }
+  }
+
+  @include xs {
+    .subscribe {
+      padding: 80px 0;
+
+
+    }
+  }
+
+}
+
+
+.backToTopBtn {
+  position: fixed;
+  background: var(--sky-cl);
+  height: 45px;
+  width: 45px;
+  bottom: 3%;
+  right: 3%;
+  z-index: 3;
+  padding: 15px;
+  opacity: 0;
+
+  @include transistion;
+
+  &.showButton {
+    opacity: 1;
+  }
+}
+
+.loading__percent {
+  color: var(--white-cl);
+
+}
+
+.loading__bar {
+  background-color: var(--white-cl);
+  height: 10px;
+
+  .loading__bar-inside {
+    background: var(--sky-cl);
+    height: 10px;
+    width: 0;
+    border-radius: 0;
   }
 }

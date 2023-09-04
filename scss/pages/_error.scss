@@ -1,0 +1,52 @@
+.scerror {
+  background-color: var(--ocean-cl);
+  height: 100vh;
+  width: 100vw;
+  max-height: 1140px;
+  @include disflex;
+  position: relative;
+
+
+
+  .blur_center {
+    position: absolute;
+  }
+
+  .container {
+    @include disflex;
+
+    .textbox {
+      @include disflex;
+      flex-direction: column;
+
+      .desc {
+        max-width: 557px;
+        text-align: center;
+      }
+    }
+
+    .gropubtn {
+      display: flex;
+      gap: 14px;
+      margin-top: 40px;
+
+      @include xs {
+        flex-direction: column;
+        width: 100%;
+
+        .--mainbtn {
+          width: 100%;
+        }
+      }
+    }
+
+
+  }
+
+  @include xs {
+    height: 100%;
+    width: 100%;
+    padding-top: 190px;
+    padding-bottom: 190px;
+  }
+}

@@ -1,0 +1,121 @@
+.tokens {
+  background: var(--ocean-cl);
+
+  &__main {
+    padding-top: var(--paddingtop-sc);
+
+    .container {
+      .textbox {
+        text-align: center;
+        @include disflex;
+        flex-direction: column;
+        margin-bottom: 100px;
+
+        .desc {
+          max-width: 568px;
+
+        }
+      }
+
+      .tokens__main-wrapper {
+        &.--ds-version {
+          width: 100%;
+          margin-bottom: 120px;
+
+          tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+            height: fit-content;
+            text-align: left;
+
+            th {
+              padding: 34px 0;
+              height: fit-content;
+              text-align: left;
+            }
+
+            &.--coinrow {
+              td {
+                padding: 44px 0 44px 0;
+              }
+
+              .coin {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                padding-right: 40px;
+              }
+
+              .desc {
+                max-width: 260px;
+                // padding-right: 32px;
+              }
+            }
+          }
+
+          .element__info-detail {
+            display: flex;
+            align-items: center;
+          }
+
+        }
+
+        &.--mb-version {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @include xs {
+    &__main {
+      padding-top: var(--paddingtop-sc);
+
+
+      .container {
+        .textbox {
+          margin-bottom: 48px;
+        }
+
+        .tokens__main-wrapper {
+
+          &.--ds-version {
+            display: none;
+          }
+
+          &.--mb-version {
+            display: flex;
+            overflow: scroll;
+            margin-bottom: 80px;
+
+            .element {
+              flex-shrink: 0;
+              width: 100vw;
+              border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+              &__info {
+                padding: 32px 0;
+
+                &-detail {
+                  margin-top: 16px;
+                  display: flex;
+                  align-items: center;
+                  gap: 16px;
+
+                  p {
+                    max-width: 258px;
+                  }
+                }
+              }
+
+
+              .link {
+                text-decoration: underline;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

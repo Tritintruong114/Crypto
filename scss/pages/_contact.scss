@@ -1,0 +1,220 @@
+.contact {
+
+
+  .sccontact {
+    background: var(--ocean-cl);
+    padding-top: var(--paddingtop-sc);
+    overflow: hidden;
+    position: relative;
+
+    .blur__top {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(30%, -30%);
+    }
+
+    .container {
+      .textbox {
+
+        &.--title {
+          margin-bottom: 52px;
+        }
+      }
+
+
+      .sccontact__form {
+        display: grid;
+        grid-template-columns: var(--grid-columns);
+        gap: var(--gap);
+
+        @include xs {
+          grid-template-columns: 1fr;
+        }
+
+        .sccontact__form-inputs {
+          display: flex;
+          flex-wrap: wrap;
+          grid-column: 1/ span 8;
+          gap: 25px;
+
+          @include md {
+            grid-column: 1 / span 5;
+          }
+
+          @include xs {
+            grid-column: 1 / span 1;
+          }
+
+          .--mainbtn {
+            margin-top: 20px;
+          }
+
+          .input_form {
+            display: flex;
+            flex-direction: column;
+
+
+            @include md {
+
+              width: 100%;
+            }
+
+            .--lb {
+              margin-bottom: 12px;
+            }
+
+            input {
+              padding: 20px 25px;
+              border-radius: 100px;
+              width: 364px;
+
+
+
+              @include xs {
+                width: 100%;
+              }
+            }
+
+            input:focus {
+              outline: 2px solid var(--sky-cl);
+            }
+
+            textarea:focus {
+              outline: 2px solid var(--sky-cl);
+            }
+
+
+
+            .textarea {
+              width: 753px;
+              height: 162px;
+              padding: 20px 25px;
+              border-radius: 14px;
+
+              @include md {
+                width: 500px;
+              }
+
+              @include xs {
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        .sccontact__form-textbox {
+          grid-column: 9 / span 4;
+
+          @include md {
+            grid-column: 7 /span 6;
+          }
+
+          @include xs {
+            grid-column: 1 / span 1;
+          }
+
+          .heading {
+            margin-bottom: 12px;
+          }
+
+          .desc {
+            margin-bottom: 32px;
+          }
+        }
+
+        input,
+        textarea {
+          background-color: var(--navi-cl);
+          outline: none;
+          color: var(--white-cl);
+
+          &::placeholder {
+            color: var(--white-cl);
+          }
+        }
+      }
+
+      .scfaq {
+        padding-top: 120px;
+        padding-bottom: 120px;
+
+        .heading {
+
+          &.--h1 {
+
+            margin-bottom: 80px;
+          }
+
+          text-align: center;
+        }
+
+        &__content {
+
+          display: grid;
+          grid-template-columns: var(--grid-columns);
+          gap: var(--gap);
+
+          .scfaq__content-el {
+            overflow: hidden;
+
+            .question {
+              @include disbet;
+              @include transistion;
+
+              .icon__plus {
+                background-color: var(--white-cl);
+                height: 2px;
+                width: 27px;
+                display: block;
+
+                @include transistion;
+
+                &::after {
+                  background-color: var(--white-cl);
+                  height: 2px;
+                  width: 27px;
+                  display: block;
+                  content: '';
+                  transform: rotate(90deg);
+                  @include transistion;
+                }
+
+
+              }
+            }
+
+            grid-column: 2 / span 10;
+            padding: 34px 37px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+
+            .desc {
+              visibility: hidden;
+              height: 0;
+            }
+
+            &.--active {
+              .desc {
+                visibility: visible;
+                margin-top: 20px;
+                height: fit-content;
+                @include transistion;
+              }
+
+              .icon__plus {
+                &::after {
+
+                  transform: rotate(0);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+
+
+  }
+}

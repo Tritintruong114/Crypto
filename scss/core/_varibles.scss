@@ -3,7 +3,7 @@
   --cubic: cubic-bezier(0.59, 0.29, 0.15, 0.93);
   //Gap
   --gap: 26px;
-
+  --paddingtop-sc: 190px;
   //Columms
   --grid-columns: repeat(12, 1fr);
   --grid-columns-span: 1 / span 12;
@@ -18,7 +18,7 @@
   --hover-btn: #031fb4;
   --button-cl-opacity: rgba(255, 255, 255, 0.1);
 
-  //Height
+  --post-gap: 26px;
   --header-height: 132px;
   --button-height: 70px;
   --subscribe-height: 64px;
@@ -37,6 +37,11 @@
   --fs-h2: 42px;
   --lh-h2: 55px;
   --ls-h2: 0px;
+
+  //Pricing 
+  --fs-pr: 42px;
+  --lh-pr: 55px;
+  --ls-pr: 0px;
 
   //Label
   --fs-lb: 18px;
@@ -91,7 +96,27 @@
   --lh-posttitle: 31px;
   --ls-posttitle: 0px;
 
+  //blog page title main
+  --fs-postmain: 28px;
+  --lh-postmain: 40px;
+  --ls-postmain: 0.28px;
+
+  //blog page h3 title 
+  --fs-posth3: 28px;
+  --lh-posth3: 30px;
+  --ls-posth3: 0.28px;
+
+
+  //Quote p
+  --fs-quote: 22px;
+  --lh-quote: 38px;
+
+
+  //Error
+  --fs-error: 180px;
+  --lh-error: 160px;
   //Responsive
+
   @include md {
     --container-max-width: 1140px;
   }
@@ -104,11 +129,13 @@
 
   //Mobile
   @include sm {
+    --paddingtop-sc: 130px;
     --container-padding: 15px;
+    --post-gap: 16px;
     //Mobile height
     --tabbtn-height: 48px;
     --subscribe-height: 70px;
-    --header-height: 93px;
+    --header-height: 72px;
     --downloadbtn-height: 70px;
     --tagbtn-height: 18px;
     //Heading 1
@@ -158,6 +185,22 @@
     --lh-posttitle: 31px;
     --ls-posttitle: 0px;
     --container-max-width: 100%;
+
+
+    --fs-coin: 18px;
+    --lh-coin: 20px;
+    --ls-coin: 0px;
+
+
+    --fs-postmain: 22px;
+    --lh-postmain: 31px;
+    --ls-postmain: 0px;
+
+    --fs-quote: 16px;
+    --lh-quote: 26px;
+
+    --fs-error: 120px;
+    --lh-error: 120px
   }
 
   @keyframes jumpInfinite {
