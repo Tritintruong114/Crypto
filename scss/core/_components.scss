@@ -846,3 +846,48 @@ sup {
     border-radius: 0;
   }
 }
+
+.popup {
+  @include disflex;
+  @include transistion;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 10;
+  top: 0;
+
+  &.--showPopup {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .popup__cointainer {
+    aspect-ratio: 16 / 9;
+    width: min(1110px, 100%);
+    @include disflex;
+    position: relative;
+  }
+
+  .video__cointainer {
+    background: var(--darkYellow-cl);
+    width: 100%;
+    height: 100%;
+    border: 4px solid var(--white-cl);
+    position: relative;
+  }
+
+  .x-icon {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    height: 30px;
+    width: 30px;
+    background: var(--darkYellow-cl);
+    padding: 8px;
+  }
+}

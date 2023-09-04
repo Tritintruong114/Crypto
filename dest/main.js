@@ -167,7 +167,7 @@ imagesLoaded(document.querySelector("body"), function (instance) {
           i = 0;
         } else {
           width++;
-          progress.style.width = width++ + "%";
+          progress.style.width = width + "%";
           percent.textContent = width + "%";
         }
       };
@@ -177,3 +177,78 @@ imagesLoaded(document.querySelector("body"), function (instance) {
   document.querySelector(".loading").classList.add("--hiden")
 
 })
+
+const userName = document.querySelector('#username')
+const userEmail = document.querySelector('#email')
+const userCompany = document.querySelector('#companyname')
+const userHow = document.querySelector('#how')
+const form = document.querySelector('.form-field')
+
+form?.addEventListener('submit', function (e) {
+  // prevent the form from submitting
+  e.preventDefault();
+  if (!form.Name.value && !form.Email.value) {
+    userName.classList.add('--required')
+    userEmail.classList.add('--required')
+    document.querySelector('.--name').style.display = 'block'
+    document.querySelector('.--email').style.display = 'block'
+  } else if (!form.Name.value && form.Email.value) {
+    userName.classList.add('--required')
+    document.querySelector('.--name').style.display = 'block'
+  } else if (form.Name.value && !form.Email.value) {
+    userEmail.classList.add('--required')
+    document.querySelector('.--email').style.display = 'block'
+  } else if (form) {
+    userName.classList.remove('--required')
+    userEmail.classList.remove('--required')
+    form.Name.value = ''
+    form.Email.value = ''
+    form.Company.value = ''
+    form.Textarea.value = ''
+    document.querySelector('.--name').style.display = 'none'
+    document.querySelector('.--email').style.display = 'none'
+  }
+});
+
+const validateUsername = (value) => {
+  e.preventDefault();
+  if (!value) {
+    userName.classList.add('--required')
+  } else {
+    alert(value)
+  }
+}
+
+const isEmailValid = (email) => {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+};
+
+const isRequired = value => value === '' ? false : true;
+
+
+const xButton = document.querySelector(".x-icon");
+const popUpVideo = document.querySelector(".popup");
+const showVideo = document.querySelectorAll(".playicon");
+const watchButton = document.querySelector(".scvideo__video");
+const videoContainer = document.querySelector(".video__cointainer");
+
+xButton.addEventListener("click", () => {
+  popUpVideo.classList.remove("--showPopup");
+  videoContainer.innerHTML = ``;
+});
+
+watchButton.addEventListener("click", () => {
+  popUpVideo.classList.add("--showPopup");
+  console.log(1)
+  videoContainer.innerHTML = `
+             <iframe
+                src="https://www.youtube.com/embed/LYMSE3BDjEA?&autoplay=1"
+                title="YouTube video player"
+                frameborder="0"
+                style="overflow: hidden; height: 100%; width: 100%"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+    `;
+});

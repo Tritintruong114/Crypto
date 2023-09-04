@@ -76,30 +76,35 @@
       </div>
 
       <section class="sccontact__form">
-        <form class="sccontact__form-inputs">
+        <form name="myForm" id='contact' class="sccontact__form-inputs form-field">
           <div class="input_form --body1">
             <span class="--lb">NAME*</span>
-            <input type="text" placeholder="Full Name" />
+            <input name="Name" id="username" type="text" placeholder="Full Name" />
+            <span class="errormess --name">Your name is missing</span>
           </div>
 
           <div class="input_form --body1">
             <span class="--lb">EMAIL*</span>
-            <input type="email" placeholder="abc@gmail.com" />
+            <input name="Email" id="email" type="email" placeholder="youremail@gmail.com" />
+            <span class="errormess --email">Your email is missing</span>
+
           </div>
 
           <div class="input_form --body1">
             <span class="--lb">COMPANY*</span>
-            <input type="text" placeholder="Company Name" />
+            <input name="Company" id="companyname" type="text" placeholder="Company Name" />
+
           </div>
 
           <div class="input_form --body1">
             <span class="--lb">SUBJECT*</span>
-            <input type="text" placeholder="How can we help you?" />
+            <input name="Subject" id="how" type="text" placeholder="How can we help you?" />
           </div>
 
           <div class="input_form --body1">
             <span class="--lb">MESSAGE*</span>
-            <textarea class="textarea" placeholder="Your Message" name="" id="" cols="30" rows="10"></textarea>
+            <textarea name="Textarea" id="textarea" class="textarea" placeholder="Your Message" name="" id="" cols="30"
+              rows="10"></textarea>
           </div>
 
           <button type="submit" class="--mainbtn --tb">Send Message</button>
