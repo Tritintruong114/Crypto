@@ -205,13 +205,13 @@ sup {
     position: relative;
     background: var(--white-cl);
     width: 160px;
-    height: 4px;
+    height: 1px;
     // animation: showLoadingBar 0.6s;
     @include transistion;
 
     &-inside {
       background: var(--darkYellow-cl);
-      height: 4px;
+      height: 1px;
       animation: loadingScreen 1s;
       border-radius: 100%;
       @include transistion;
@@ -250,6 +250,15 @@ sup {
 .--lb {
   font-family: sb;
   font-size: var(--fs-lb);
+  line-height: var(--lh-lb);
+  letter-spacing: var(--ls-lb);
+  color: var(--white-cl);
+  text-transform: uppercase;
+}
+
+.--error {
+  font-family: sb;
+  font-size: 14px;
   line-height: var(--lh-lb);
   letter-spacing: var(--ls-lb);
   color: var(--white-cl);
@@ -368,6 +377,10 @@ sup {
   gap: 8px;
   @include transistion;
   width: fit-content;
+
+  span {
+    margin-top: 5px;
+  }
 
   &.--contactbtn {
     width: 100%;
@@ -668,6 +681,7 @@ sup {
   padding: 0 15px;
   border-radius: 1000px;
   z-index: 3;
+  text-transform: uppercase;
 }
 
 .--button-opacity {
@@ -746,22 +760,18 @@ sup {
       .error {
         color: red;
         position: absolute;
-        bottom: -10px;
-        left: 20px;
-
-        @include md {
-          bottom: -30px;
-        }
+        transform: translate(18px, 50px);
 
         @include xs {
-          bottom: 37%;
-          left: 4%;
+          bottom: 0;
+          position: relative;
+          transform: initial;
         }
       }
 
       &.--showError {
-        .input {
-          outline: red;
+        input {
+          border: 2px solid red;
         }
       }
     }
@@ -791,7 +801,7 @@ sup {
         .--mainbtn {
           position: relative;
           background-color: #031FB4;
-          margin-top: 20px;
+          // margin-top: 20px;
         }
 
 
@@ -837,13 +847,14 @@ sup {
 
 .loading__bar {
   background-color: var(--white-cl);
-  height: 10px;
+  height: 4px;
+  border-radius: 100px;
 
   .loading__bar-inside {
     background: var(--sky-cl);
-    height: 10px;
+    height: 4px;
     width: 0;
-    border-radius: 0;
+    border-radius: 100px;
   }
 }
 
@@ -872,10 +883,10 @@ sup {
   }
 
   .video__cointainer {
-    background: var(--darkYellow-cl);
+    background: var(--sky-cl);
     width: 100%;
     height: 100%;
-    border: 4px solid var(--white-cl);
+    border: 4px solid var(--sky-cl);
     position: relative;
   }
 
@@ -887,7 +898,7 @@ sup {
     z-index: 10;
     height: 30px;
     width: 30px;
-    background: var(--darkYellow-cl);
+    background: var(--sky-cl);
     padding: 8px;
   }
 }

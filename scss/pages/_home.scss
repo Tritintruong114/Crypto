@@ -109,7 +109,7 @@
       }
 
       img {
-        transform: translateX(18%);
+        transform: translateX(20%);
 
         @include xs {
           transform: initial;
@@ -513,7 +513,7 @@
 
       &-element {
         flex-shrink: 0;
-        width: calc((var(--container-maxwidth) / 2) - var(--gap));
+        width: calc((var(--container-maxwidth) / 2) - var(--silderGap));
         // height: 100%;
         padding: 66px 50px;
         margin-right: 28px;

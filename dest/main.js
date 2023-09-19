@@ -21,7 +21,7 @@ backToTopBtn.addEventListener("click", () => {
   });
 });
 
-if (window.matchMedia("(max-width: 991px)").matches) {
+if (window.matchMedia("(max-width: 1199.98px)").matches) {
   /* the viewport is at least 400 pixels wide */
   $(".scuserfeedback__wrapper").flickity({
     cellAlign: "center",
@@ -92,11 +92,24 @@ let height = arr.forEach((el, index) => {
 })
 
 
+window.addEventListener("resize", () => {
+  const widthAbove1000 = window.innerWidth > 1180;
+
+
+  const viewPort = document.querySelector('.flickity-viewport')
+
+  if (widthAbove1000)
+    window.setInterval(function () {
+      window.top.location = window.top.location
+    }, 1000)
+  if (!widthAbove1000) return;
+
+});
 
 
 
 window.addEventListener('resize', () => {
-  if (screen.width === 991) {
+  if (screen.width === 1199) {
     location.reload()
   }
 })
@@ -165,6 +178,8 @@ imagesLoaded(document.querySelector("body"), function (instance) {
         if (width >= 100) {
           clearInterval(id);
           i = 0;
+          document.querySelector(".loading").classList.add("--hiden")
+
         } else {
           width++;
           progress.style.width = width + "%";
@@ -174,7 +189,6 @@ imagesLoaded(document.querySelector("body"), function (instance) {
       let id = setInterval(frame, 3);
     }
   };
-  document.querySelector(".loading").classList.add("--hiden")
 
 })
 
@@ -260,7 +274,6 @@ xButton.addEventListener("click", () => {
 
 watchButton.addEventListener("click", () => {
   popUpVideo.classList.add("--showPopup");
-  console.log(1)
   videoContainer.innerHTML = `
              <iframe
                 src="https://www.youtube.com/embed/LYMSE3BDjEA?&autoplay=1"
