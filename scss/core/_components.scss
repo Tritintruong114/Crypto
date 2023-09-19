@@ -379,7 +379,7 @@ sup {
   width: fit-content;
 
   span {
-    margin-top: 5px;
+    margin-top: 3px;
   }
 
   &.--contactbtn {
@@ -706,6 +706,7 @@ sup {
   width: fit-content;
   padding: 7px 24px;
   border-radius: 80px;
+  cursor: pointer;
 
   &.--active {
     background-color: var(--sky-cl);

@@ -99,6 +99,14 @@
           align-items: center;
           gap: 16px;
 
+          p {
+            cursor: pointer;
+
+            &:hover {
+              color: var(--sky-cl);
+            }
+          }
+
           .arrowbtn {
             position: relative;
             @include disflex;
@@ -106,6 +114,7 @@
             height: 36px;
             width: 36px;
             border-radius: 100%;
+            cursor: pointer;
           }
 
           .--negative {

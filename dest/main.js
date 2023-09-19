@@ -101,9 +101,8 @@ window.addEventListener("resize", () => {
   if (widthAbove1000)
     window.setInterval(function () {
       window.top.location = window.top.location
-    }, 1000)
+    }, 600)
   if (!widthAbove1000) return;
-
 });
 
 
@@ -168,16 +167,14 @@ window.addEventListener("scroll", () => {
 
 imagesLoaded(document.querySelector("body"), function (instance) {
   if (instance) {
-    let i = 0;
     let width = 0;
     let progress = document.querySelector(".loading__bar-inside");
     let percent = document.querySelector(".loading__percent");
 
-    if (i == 0) {
+    if (width == 0) {
       const frame = () => {
         if (width >= 100) {
           clearInterval(id);
-          i = 0;
           document.querySelector(".loading").classList.add("--hiden")
 
         } else {
@@ -186,7 +183,7 @@ imagesLoaded(document.querySelector("body"), function (instance) {
           percent.textContent = width + "%";
         }
       };
-      let id = setInterval(frame, 3);
+      let id = setInterval(frame, 7);
     }
   };
 
