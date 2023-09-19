@@ -404,6 +404,14 @@ sup {
       color: var(--white-cl);
     }
   }
+
+  &.--viewAll {
+    background-color: rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      background-color: var(--sky-cl);
+    }
+  }
 }
 
 .--social-icon {
@@ -802,7 +810,8 @@ sup {
         .--mainbtn {
           position: relative;
           background-color: #031FB4;
-          // margin-top: 20px;
+          margin-top: 20px;
+          cursor: pointer;
         }
 
 

@@ -129,7 +129,9 @@
 
       &.--title {
         max-width: initial;
-        @include disbet;
+        display: flex;
+        flex-direction: initial;
+        justify-content: space-between;
 
         @include xs {
           flex-direction: column;
